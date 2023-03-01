@@ -177,23 +177,4 @@
 POWERMODE.shake = true;
 POWERMODE.mobile = false;
 document.body.addEventListener('input', POWERMODE);
-</script><script src="//code.tidio.co/mvmeu6lyrze7wjvvldezi0ssqy7zwx5f.js" async="async"></script><script>function onTidioChatApiReady() {
-  window.tidioChatApi.hide();
-  window.tidioChatApi.on("close", function() {
-    window.tidioChatApi.hide();
-  });
-}
-if (window.tidioChatApi) {
-  window.tidioChatApi.on("ready", onTidioChatApiReady);
-} else {
-  document.addEventListener("tidioChat-ready", onTidioChatApiReady);
-}
-
-var chatBtnFn = () => {
-  document.getElementById("chat_btn").addEventListener("click", function(){
-    window.tidioChatApi.show();
-    window.tidioChatApi.open();
-  });
-}
-chatBtnFn()
 </script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
