@@ -1,0 +1,255 @@
+<!DOCTYPE html><html lang="en" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"><title>数据管理基础chapter_02 | Rain's Blog</title><meta name="author" content="Rain Sun"><meta name="copyright" content="Rain Sun"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="二、关系的完整性关系的三类完整性约束1.实体完整性 2.参照完整性 说明：关系模型必须满足的完整性约束条件称为关系的两个不变性，应该由关系系统自动支持 3.用户定义的完整性 说明：应用领域需要遵循的约束条件，体现了具体领域中的语义约束 实体完整性实体完整性规则1.若属性A是基本关系R的主属性，则属性A不能取空值 2.空值就是“不知道”或“不存在”或“无意义”的值 实体完整性规则的说明1.实体完整性">
+<meta property="og:type" content="article">
+<meta property="og:title" content="数据管理基础chapter_02">
+<meta property="og:url" content="http://sebugmaker.github.io/2023/03/02/%E6%95%B0%E6%8D%AE%E7%AE%A1%E7%90%86%E5%9F%BA%E7%A1%80chapter-02/index.html">
+<meta property="og:site_name" content="Rain&#39;s Blog">
+<meta property="og:description" content="二、关系的完整性关系的三类完整性约束1.实体完整性 2.参照完整性 说明：关系模型必须满足的完整性约束条件称为关系的两个不变性，应该由关系系统自动支持 3.用户定义的完整性 说明：应用领域需要遵循的约束条件，体现了具体领域中的语义约束 实体完整性实体完整性规则1.若属性A是基本关系R的主属性，则属性A不能取空值 2.空值就是“不知道”或“不存在”或“无意义”的值 实体完整性规则的说明1.实体完整性">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://sebugmaker.github.io/img/index.jpg">
+<meta property="article:published_time" content="2023-03-02T08:05:16.000Z">
+<meta property="article:modified_time" content="2023-03-03T09:39:01.050Z">
+<meta property="article:author" content="Rain Sun">
+<meta property="article:tag" content="数据管理基础">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://sebugmaker.github.io/img/index.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://sebugmaker.github.io/2023/03/02/%E6%95%B0%E6%8D%AE%E7%AE%A1%E7%90%86%E5%9F%BA%E7%A1%80chapter-02/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: 'Copy successfully',
+    error: 'Copy error',
+    noSupport: 'The browser does not support'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: 'Just',
+    min: 'minutes ago',
+    hour: 'hours ago',
+    day: 'days ago',
+    month: 'months ago'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  }
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '数据管理基础chapter_02',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2023-03-03 17:39:01'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+    win.getCSS = (url,id = false) => new Promise((resolve, reject) => {
+      const link = document.createElement('link')
+      link.rel = 'stylesheet'
+      link.href = url
+      if (id) link.id = id
+      link.onerror = reject
+      link.onload = link.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        link.onload = link.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(link)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.3.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/IMG_4371.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">3</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">2</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">2</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/img/index.jpg')"><nav id="nav"><span id="blog-info"><a href="/" title="Rain's Blog"><span class="site-name">Rain's Blog</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">数据管理基础chapter_02</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">Created</span><time class="post-meta-date-created" datetime="2023-03-02T08:05:16.000Z" title="Created 2023-03-02 16:05:16">2023-03-02</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2023-03-03T09:39:01.050Z" title="Updated 2023-03-03 17:39:01">2023-03-03</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E6%95%B0%E6%8D%AE%E7%AE%A1%E7%90%86%E5%9F%BA%E7%A1%80/">数据管理基础</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="数据管理基础chapter_02"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">Post View:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h3 id="二、关系的完整性"><a href="#二、关系的完整性" class="headerlink" title="二、关系的完整性"></a>二、关系的完整性</h3><h4 id="关系的三类完整性约束"><a href="#关系的三类完整性约束" class="headerlink" title="关系的三类完整性约束"></a>关系的三类完整性约束</h4><p>1.实体完整性</p>
+<p>2.参照完整性</p>
+<p>说明：关系模型必须满足的完整性约束条件称为关系的两个不变性，应该由关系系统自动支持</p>
+<p>3.用户定义的完整性</p>
+<p>说明：应用领域需要遵循的约束条件，体现了具体领域中的语义约束</p>
+<h4 id="实体完整性"><a href="#实体完整性" class="headerlink" title="实体完整性"></a>实体完整性</h4><h5 id="实体完整性规则"><a href="#实体完整性规则" class="headerlink" title="实体完整性规则"></a>实体完整性规则</h5><p>1.若属性A是基本关系R的主属性，则属性A不能取空值</p>
+<p>2.空值就是“不知道”或“不存在”或“无意义”的值</p>
+<h5 id="实体完整性规则的说明"><a href="#实体完整性规则的说明" class="headerlink" title="实体完整性规则的说明"></a>实体完整性规则的说明</h5><p>1.实体完整性规则是针对基本关系而言的。一个基本表通常对应现实世界的一个实体集。</p>
+<p>2.现实世界中的实体是可区分的，即它们具有某种唯一性标识。</p>
+<p>3.关系模型中以主码作为唯一性标识。</p>
+<p>4.主码中的属性即主属性不能取空值</p>
+<h4 id="关系的引用"><a href="#关系的引用" class="headerlink" title="关系的引用"></a>关系的引用</h4><p>在关系模型中实体及实体间的联系都是用关系来描述的，自然存在着关系与关系间的引用</p>
+<h4 id="外码"><a href="#外码" class="headerlink" title="外码"></a>外码</h4><h5 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h5><p>设F是基本关系R的一个或一组属性，但不是关系R的码。如果F与基本关系S的主码Ks相对应，则称F是R的外码（Foreign Key）</p>
+<p>1.基本关系R称为参照关系（Referencing  Relation）</p>
+<p>2.基本关系S称为被参照关系（Referenced Relation）或目标关系（Target Relation）</p>
+<h6 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h6><p>1.关系R和S不一定是不同的关系</p>
+<p>2.目标关系S的主码Ks和参照关系的外码F必须定义在同一个（或一组）域上</p>
+<p>3.外码并不一定要与相应的主码同名</p>
+<h4 id="参照完整性规则"><a href="#参照完整性规则" class="headerlink" title="参照完整性规则"></a>参照完整性规则</h4><p>若属性（或属性组）F是基本关系R的外码,它与基本关系S的主码Ks相对应（基本关系R和S不一定是不同的关系），则对于R中每个元组在F上的值必须为：</p>
+<p>1.或者取空值（F的每个属性值均为空值）</p>
+<p>2.或者等于S中某个元组的主码值</p>
+<h4 id="用户定义的完整性"><a href="#用户定义的完整性" class="headerlink" title="用户定义的完整性"></a>用户定义的完整性</h4><p>1.针对某一具体关系数据库的约束条件，反映某一具体应用所涉及的数据必须满足的语义要求</p>
+<p>2.关系模型应提供定义和检验这类完整性的机制，以便用统一的系统的方法处理它们，而不需由应用程序承担这一功能</p>
+<h3 id="三、关系操作与关系代数"><a href="#三、关系操作与关系代数" class="headerlink" title="三、关系操作与关系代数"></a>三、关系操作与关系代数</h3><h4 id="基本关系操作"><a href="#基本关系操作" class="headerlink" title="基本关系操作"></a>基本关系操作</h4><h5 id="常用的关系操作："><a href="#常用的关系操作：" class="headerlink" title="常用的关系操作："></a>常用的关系操作：</h5><p>查询操作：选择、投影、连接、除、并、差、交、笛卡尔积（选择、投影、并、差、笛卡尔积是5种基本操作）</p>
+<p>数据更新：插入、删除、修改</p>
+<h5 id="关系操作的特点："><a href="#关系操作的特点：" class="headerlink" title="关系操作的特点："></a>关系操作的特点：</h5><p>集合操作方式：操作的对象和结果都是集合，一次一集合的方式</p>
+<h4 id="关系代数"><a href="#关系代数" class="headerlink" title="关系代数"></a>关系代数</h4><p>·关系代数是一种抽象的查询语言，用对关系的运算来表达查询</p>
+<p>·运算对象和结果都是关系</p>
+<p>·两类运算符：</p>
+<p>1、集合运算符</p>
+<p>2、专门的关系运算符</p>
+<h4 id="关系代数运算符"><a href="#关系代数运算符" class="headerlink" title="关系代数运算符"></a>关系代数运算符</h4><h5 id="集合运算符："><a href="#集合运算符：" class="headerlink" title="集合运算符："></a>集合运算符：</h5><p>一.并（Union）</p>
+<p>R和S具有 1.相同的目n（即两个关系都有n个属性</p>
+<p>2.相应的属性取自同一个域<br>$$<br>R\cup S &#x3D; \lbrace t \mid t \in R \vee t \in S \rbrace<br>$$<br>二.差（Difference）</p>
+<p>R和S具有 1.相同的目n</p>
+<p>2.相应的属性取自同一个域<br>$$<br>R - S &#x3D; \lbrace t \mid t \in R \wedge t \notin S \rbrace<br>$$<br>三.交（Intersection）</p>
+<p>R和S具有1.相同的目n</p>
+<p>2.相应的属性取自同一个域<br>$$<br>R \cap S &#x3D; \lbrace t \mid t \in R \wedge t \in S \rbrace<br>$$<br>四.笛卡尔积</p>
+<p>严格地讲应该是广义的笛卡尔积（Extended Cartesian Product）</p>
+<h5 id="专门的关系运算符："><a href="#专门的关系运算符：" class="headerlink" title="专门的关系运算符："></a>专门的关系运算符：</h5></article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">Author: </span><span class="post-copyright-info"><a href="http://sebugmaker.github.io">Rain Sun</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">Link: </span><span class="post-copyright-info"><a href="http://sebugmaker.github.io/2023/03/02/%E6%95%B0%E6%8D%AE%E7%AE%A1%E7%90%86%E5%9F%BA%E7%A1%80chapter-02/">http://sebugmaker.github.io/2023/03/02/%E6%95%B0%E6%8D%AE%E7%AE%A1%E7%90%86%E5%9F%BA%E7%A1%80chapter-02/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">Copyright Notice: </span><span class="post-copyright-info">All articles in this blog are licensed under <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> unless stating additionally.</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E6%95%B0%E6%8D%AE%E7%AE%A1%E7%90%86%E5%9F%BA%E7%A1%80/">数据管理基础</a></div><div class="post_share"><div class="social-share" data-image="/img/index.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/2023/03/01/first/" title="编译原理lecture_01"><img class="cover" src="/img/index.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">Next Post</div><div class="next_info">编译原理lecture_01</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/IMG_4371.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Rain Sun</div><div class="author-info__description">Mia San Mia</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">3</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">2</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">2</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/SEBugMaker"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/SEBugMaker" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:1419765379@qq.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>Announcement</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>Catalog</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E5%85%B3%E7%B3%BB%E7%9A%84%E5%AE%8C%E6%95%B4%E6%80%A7"><span class="toc-number">1.</span> <span class="toc-text">二、关系的完整性</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%85%B3%E7%B3%BB%E7%9A%84%E4%B8%89%E7%B1%BB%E5%AE%8C%E6%95%B4%E6%80%A7%E7%BA%A6%E6%9D%9F"><span class="toc-number">1.1.</span> <span class="toc-text">关系的三类完整性约束</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AE%9E%E4%BD%93%E5%AE%8C%E6%95%B4%E6%80%A7"><span class="toc-number">1.2.</span> <span class="toc-text">实体完整性</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%AE%9E%E4%BD%93%E5%AE%8C%E6%95%B4%E6%80%A7%E8%A7%84%E5%88%99"><span class="toc-number">1.2.1.</span> <span class="toc-text">实体完整性规则</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%AE%9E%E4%BD%93%E5%AE%8C%E6%95%B4%E6%80%A7%E8%A7%84%E5%88%99%E7%9A%84%E8%AF%B4%E6%98%8E"><span class="toc-number">1.2.2.</span> <span class="toc-text">实体完整性规则的说明</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%85%B3%E7%B3%BB%E7%9A%84%E5%BC%95%E7%94%A8"><span class="toc-number">1.3.</span> <span class="toc-text">关系的引用</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%A4%96%E7%A0%81"><span class="toc-number">1.4.</span> <span class="toc-text">外码</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%AE%9A%E4%B9%89"><span class="toc-number">1.4.1.</span> <span class="toc-text">定义</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#%E8%AF%B4%E6%98%8E"><span class="toc-number">1.4.1.1.</span> <span class="toc-text">说明</span></a></li></ol></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8F%82%E7%85%A7%E5%AE%8C%E6%95%B4%E6%80%A7%E8%A7%84%E5%88%99"><span class="toc-number">1.5.</span> <span class="toc-text">参照完整性规则</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%94%A8%E6%88%B7%E5%AE%9A%E4%B9%89%E7%9A%84%E5%AE%8C%E6%95%B4%E6%80%A7"><span class="toc-number">1.6.</span> <span class="toc-text">用户定义的完整性</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E5%85%B3%E7%B3%BB%E6%93%8D%E4%BD%9C%E4%B8%8E%E5%85%B3%E7%B3%BB%E4%BB%A3%E6%95%B0"><span class="toc-number">2.</span> <span class="toc-text">三、关系操作与关系代数</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E5%85%B3%E7%B3%BB%E6%93%8D%E4%BD%9C"><span class="toc-number">2.1.</span> <span class="toc-text">基本关系操作</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%B8%B8%E7%94%A8%E7%9A%84%E5%85%B3%E7%B3%BB%E6%93%8D%E4%BD%9C%EF%BC%9A"><span class="toc-number">2.1.1.</span> <span class="toc-text">常用的关系操作：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%85%B3%E7%B3%BB%E6%93%8D%E4%BD%9C%E7%9A%84%E7%89%B9%E7%82%B9%EF%BC%9A"><span class="toc-number">2.1.2.</span> <span class="toc-text">关系操作的特点：</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%85%B3%E7%B3%BB%E4%BB%A3%E6%95%B0"><span class="toc-number">2.2.</span> <span class="toc-text">关系代数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%85%B3%E7%B3%BB%E4%BB%A3%E6%95%B0%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-number">2.3.</span> <span class="toc-text">关系代数运算符</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E9%9B%86%E5%90%88%E8%BF%90%E7%AE%97%E7%AC%A6%EF%BC%9A"><span class="toc-number">2.3.1.</span> <span class="toc-text">集合运算符：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E4%B8%93%E9%97%A8%E7%9A%84%E5%85%B3%E7%B3%BB%E8%BF%90%E7%AE%97%E7%AC%A6%EF%BC%9A"><span class="toc-number">2.3.2.</span> <span class="toc-text">专门的关系运算符：</span></a></li></ol></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Post</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2023/03/02/%E6%95%B0%E6%8D%AE%E7%AE%A1%E7%90%86%E5%9F%BA%E7%A1%80chapter-02/" title="数据管理基础chapter_02"><img src="/img/index.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="数据管理基础chapter_02"/></a><div class="content"><a class="title" href="/2023/03/02/%E6%95%B0%E6%8D%AE%E7%AE%A1%E7%90%86%E5%9F%BA%E7%A1%80chapter-02/" title="数据管理基础chapter_02">数据管理基础chapter_02</a><time datetime="2023-03-02T08:05:16.000Z" title="Created 2023-03-02 16:05:16">2023-03-02</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/03/01/first/" title="编译原理lecture_01"><img src="/img/index.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="编译原理lecture_01"/></a><div class="content"><a class="title" href="/2023/03/01/first/" title="编译原理lecture_01">编译原理lecture_01</a><time datetime="2023-03-01T11:51:11.000Z" title="Created 2023-03-01 19:51:11">2023-03-01</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/02/28/hello-world/" title="Hello World"><img src="/img/index.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Hello World"/></a><div class="content"><a class="title" href="/2023/02/28/hello-world/" title="Hello World">Hello World</a><time datetime="2023-02-28T11:20:21.245Z" title="Created 2023-02-28 19:20:21">2023-02-28</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2023 By Rain Sun</div><div class="framework-info"><span>Framework </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>Theme </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="Read Mode"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="Switch Between Light And Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle between single-column and double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="Setting"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="Table Of Contents"><i class="fas fa-list-ul"></i></button><button id="chat_btn" type="button" title="Chat"><i class="fas fa-sms"></i></button><button id="go-up" type="button" title="Back To Top"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><div class="js-pjax"><script>if (!window.MathJax) {
+  window.MathJax = {
+    tex: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"]],
+      tags: 'ams'
+    },
+    chtml: {
+      scale: 1.1
+    },
+    options: {
+      renderActions: {
+        findScript: [10, doc => {
+          for (const node of document.querySelectorAll('script[type^="math/tex"]')) {
+            const display = !!node.type.match(/; *mode=display/)
+            const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display)
+            const text = document.createTextNode('')
+            node.parentNode.replaceChild(text, node)
+            math.start = {node: text, delim: '', n: 0}
+            math.end = {node: text, delim: '', n: 0}
+            doc.math.push(math)
+          }
+        }, ''],
+        insertScript: [200, () => {
+          document.querySelectorAll('mjx-container').forEach(node => {
+            if (node.hasAttribute('display')) {
+              btf.wrap(node, 'div', { class: 'mathjax-overflow' })
+            } else {
+              btf.wrap(node, 'span', { class: 'mathjax-overflow' })
+            }
+          });
+        }, '', false]
+      }
+    }
+  }
+  
+  const script = document.createElement('script')
+  script.src = 'https://cdn.jsdelivr.net/npm/mathjax/es5/tex-mml-chtml.min.js'
+  script.id = 'MathJax-script'
+  script.async = true
+  document.head.appendChild(script)
+} else {
+  MathJax.startup.document.state(0)
+  MathJax.texReset()
+  MathJax.typesetPromise()
+}</script></div><script defer="defer" id="fluttering_ribbon" mobile="true" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/canvas-fluttering-ribbon.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = true;
+POWERMODE.mobile = false;
+document.body.addEventListener('input', POWERMODE);
+</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
