@@ -54,7 +54,7 @@
   isHome: true,
   isHighlightShrink: false,
   isToc: false,
-  postUpdate: '2023-05-17 20:14:06'
+  postUpdate: '2023-05-23 15:30:27'
 }</script><noscript><style type="text/css">
   #nav {
     opacity: 1
@@ -162,61 +162,138 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
-<!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.3.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://box.nju.edu.cn/f/8618b667f75848d78fe7/?dl=1" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">19</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">8</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">5</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="/music/"><i class="fa-fw fas fa-music"></i><span> Music</span></a></div></div></div></div><div class="page" id="body-wrap"><header class="full_page" id="page-header" style="background-image: url('https://box.nju.edu.cn/f/9354bc2491784b0891c8/?dl=1')"><nav id="nav"><span id="blog-info"><a href="/" title="Rain's Blog"><span class="site-name">Rain's Blog</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="/music/"><i class="fa-fw fas fa-music"></i><span> Music</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="site-info"><h1 id="site-title">Rain's Blog</h1><div id="site-subtitle"><span id="subtitle"></span></div><div id="site_social_icons"><a class="social-icon" href="https://github.com/SEBugMaker" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:sunbugmaker@gmail.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div><div id="scroll-down"><i class="fas fa-angle-down scroll-down-effects"></i></div></header><main class="layout" id="content-inner"><div class="recent-posts" id="recent-posts"><div class="recent-post-item"><div class="post_cover left"><a href="/2023/04/15/%E6%95%B0%E6%8D%AE%E7%AE%A1%E7%90%86%E5%9F%BA%E7%A1%80chapter-04/" title="数据管理基础chapter-04"><img class="post-bg" src="/img/cover.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="数据管理基础chapter-04"></a></div><div class="recent-post-info"><a class="article-title" href="/2023/04/15/%E6%95%B0%E6%8D%AE%E7%AE%A1%E7%90%86%E5%9F%BA%E7%A1%80chapter-04/" title="数据管理基础chapter-04">数据管理基础chapter-04</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2023-04-15T07:28:54.000Z" title="Created 2023-04-15 15:28:54">2023-04-15</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E6%95%B0%E6%8D%AE%E7%AE%A1%E7%90%86%E5%9F%BA%E7%A1%80/">数据管理基础</a></span></div><div class="content">数据管理基础 Chapter 04数据库安全性
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.3.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://box.nju.edu.cn/f/8618b667f75848d78fe7/?dl=1" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">20</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">8</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">5</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="/music/"><i class="fa-fw fas fa-music"></i><span> Music</span></a></div></div></div></div><div class="page" id="body-wrap"><header class="full_page" id="page-header" style="background-image: url('https://box.nju.edu.cn/f/9354bc2491784b0891c8/?dl=1')"><nav id="nav"><span id="blog-info"><a href="/" title="Rain's Blog"><span class="site-name">Rain's Blog</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="/music/"><i class="fa-fw fas fa-music"></i><span> Music</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="site-info"><h1 id="site-title">Rain's Blog</h1><div id="site-subtitle"><span id="subtitle"></span></div><div id="site_social_icons"><a class="social-icon" href="https://github.com/SEBugMaker" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:sunbugmaker@gmail.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div><div id="scroll-down"><i class="fas fa-angle-down scroll-down-effects"></i></div></header><main class="layout" id="content-inner"><div class="recent-posts" id="recent-posts"><div class="recent-post-item"><div class="post_cover left"><a href="/2023/04/16/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-01/" title="操作系统-01"><img class="post-bg" src="/img/cover.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="操作系统-01"></a></div><div class="recent-post-info"><a class="article-title" href="/2023/04/16/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-01/" title="操作系统-01">操作系统-01</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2023-04-16T07:16:40.000Z" title="Created 2023-04-16 15:16:40">2023-04-16</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">操作系统</a></span></div><div class="content">操作系统OS chapter 01 计算机系统概述
+操作系统控制计算机的角度
+
+
+
+
+
+人机交互的视角
+操作系统的人机交互部分
+
+人机交互的初期发展
+
+
+交互式控制方式
+
+
+1960s: 行命令控制方式
+1970s: 全屏幕控制方式
+
+
+斯坦福研究所提出的发展计划
+
+
+始于1960，1980s广泛应用
+强调人机交互的中心是人而不是技术
+代表成果
+鼠标，菜单，窗口控制
+人机交互发展
+WIMP界面
+缘起：70年代后期Xerox的原型机Star
+特征：窗口（windows），图标（Icons），菜单（Menu）和指示装置（Pointing Devices）为基础的图形用户界面WIMP
+得益：Apple最初使用并大力推广
+时间：1990s开始广泛使用
+不足：不允许同时使用多个交互通道，从而产生人机交互的不平衡
+多媒体计算机
+
+虚拟现实系统
+
+程序接口的角度
+操作系统的程序接口
+
+
+操作系统的程序接口——系统调用
+
+
+操作系统实现的完成某种特定功能的过程；
+为所有运行程序提供访问操作系统的接口
+
+
+系统调用的实现机制
+
+系统调用的实现要点
+
+系统调用的实现流程
+
+系统结构的角度
+操作系统软件的规 ...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/2023/04/15/%E6%95%B0%E6%8D%AE%E7%AE%A1%E7%90%86%E5%9F%BA%E7%A1%80chapter-04/" title="数据管理基础chapter-04"><img class="post-bg" src="/img/cover.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="数据管理基础chapter-04"></a></div><div class="recent-post-info"><a class="article-title" href="/2023/04/15/%E6%95%B0%E6%8D%AE%E7%AE%A1%E7%90%86%E5%9F%BA%E7%A1%80chapter-04/" title="数据管理基础chapter-04">数据管理基础chapter-04</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2023-04-15T07:28:54.000Z" title="Created 2023-04-15 15:28:54">2023-04-15</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E6%95%B0%E6%8D%AE%E7%AE%A1%E7%90%86%E5%9F%BA%E7%A1%80/">数据管理基础</a></span></div><div class="content">数据管理基础 Chapter 04
+数据库安全性
+
+
 问题的提出
+
 数据库的一大特点是数据可以共享
 数据共享必然带来数据库的安全性问题
 数据库系统中的数据共享不能是无条件的共享
+
 军事秘密、国家机密、新产品实验数据、市场需求分析、市场营销策略、销售计划、客户档案、医疗档案、银行储蓄数据
 
 
 
 
-数据库的安全性是指保护数据库以防止不合法使用所造成的数据泄露、更改或破坏 
+
+数据库的安全性是指保护数据库以防止不合法使用所造成的数据泄露、更改或破坏
+
+
 系统安全保护措施是否有效是数据库系统主要的性能指标之一
 
+
 数据库的不安全因素
+
+
 非授权用户对数据库的恶意存取和破坏
+
 一些黑客（Hacker）和犯罪分子在用户存取数据库时猎取用户名和用户口令，然后假冒合法用户偷取、修改甚至破坏用户数据。
 数据库管理系统提供的安全措施主要包括用户身份鉴别、存取控制和视图等技术
 
 
+
 数据库中重要或敏感的数据被泄露
+
 黑客和敌对分子千方百计盗窃数据库中的重要数据，一些机密信息被暴露。
 数据库管理系统提供的主要技术有强制存取控制、数据加密存储和加密传输等。
 审计日志分析
 
 
+
 安全环境的脆弱性
+
 数据库的安全性与计算机系统的安全性紧密联系
+
 计算机硬件、操作系统、网络系统等的安全性
 
+ ...</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/2023/04/15/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%8608-parser-allstar/" title="编译原理08-parser-allstar"><img class="post-bg" src="/img/cover.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="编译原理08-parser-allstar"></a></div><div class="recent-post-info"><a class="article-title" href="/2023/04/15/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%8608-parser-allstar/" title="编译原理08-parser-allstar">编译原理08-parser-allstar</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2023-04-15T02:12:37.000Z" title="Created 2023-04-15 10:12:37">2023-04-15</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86/">编译原理</a></span></div><div class="content">Adaptive LL(*) 语法分析算法
 
-建立一套可信（Trusted） ...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/2023/04/15/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%8608-parser-allstar/" title="编译原理08-parser-allstar"><img class="post-bg" src="/img/cover.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="编译原理08-parser-allstar"></a></div><div class="recent-post-info"><a class="article-title" href="/2023/04/15/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%8608-parser-allstar/" title="编译原理08-parser-allstar">编译原理08-parser-allstar</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2023-04-15T02:12:37.000Z" title="Created 2023-04-15 10:12:37">2023-04-15</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86/">编译原理</a></span></div><div class="content">Adaptive LL(*) 语法分析算法
 ANTLR 4 自动将类似 expr 的左递归规则重写成非左递归形式
 ANTLR 4 提供优秀的错误报告功能和复杂的错误恢复机制
 ANTLR 4 使用了一种名为 Adaptive LL(∗) 的新技术
 ANTLR 4 几乎能处理任何文法 (二义性文法✓ 间接左递归✗)
 
 ANTLR 4如何处理直接左递归与优先级
+
 我们在运行antlr4 LRExpr -Xlog后将会得到
 
 我们将上述代码对应于一段递归函数 expr(int _p)
 12345678expr(int _p)		: ( INT		  | ID		  )		  ( &#123;4 &gt;= $_p&#125;? &#x27;*&#x27; expr[5]		  | &#123;3 &gt;= $_p&#125;? &#x27;*&#x27; expr[4]		  ) 		;
-
 Example
 
 1 + 2  * 3
 
 
 根本问题
+
 究竟是在 expr 的当前调用中匹配下一个运算符,
 还是让 expr 的调用者匹配下一个运算符。
 
 再来看一个左结合与右结合的例子
 
 
-Example: ...</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/2023/04/12/%E6%95%B0%E6%8D%AE%E7%AE%A1%E7%90%86%E5%9F%BA%E7%A1%80chapter-03/" title="数据管理基础chapter-03"><img class="post-bg" src="/img/cover.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="数据管理基础chapter-03"></a></div><div class="recent-post-info"><a class="article-title" href="/2023/04/12/%E6%95%B0%E6%8D%AE%E7%AE%A1%E7%90%86%E5%9F%BA%E7%A1%80chapter-03/" title="数据管理基础chapter-03">数据管理基础chapter-03</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2023-04-12T10:59:31.000Z" title="Created 2023-04-12 18:59:31">2023-04-12</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E6%95%B0%E6%8D%AE%E7%AE%A1%E7%90%86%E5%9F%BA%E7%A1%80/">数据管理基础</a></span></div><div class="content">数据管理基础 Chapter 03SQL概述SQL（Structured Query Language）结构化查询语言，是关系数据库的标准语言
+Exampl ...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/2023/04/12/%E6%95%B0%E6%8D%AE%E7%AE%A1%E7%90%86%E5%9F%BA%E7%A1%80chapter-03/" title="数据管理基础chapter-03"><img class="post-bg" src="/img/cover.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="数据管理基础chapter-03"></a></div><div class="recent-post-info"><a class="article-title" href="/2023/04/12/%E6%95%B0%E6%8D%AE%E7%AE%A1%E7%90%86%E5%9F%BA%E7%A1%80chapter-03/" title="数据管理基础chapter-03">数据管理基础chapter-03</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2023-04-12T10:59:31.000Z" title="Created 2023-04-12 18:59:31">2023-04-12</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E6%95%B0%E6%8D%AE%E7%AE%A1%E7%90%86%E5%9F%BA%E7%A1%80/">数据管理基础</a></span></div><div class="content">数据管理基础 Chapter 03
+SQL概述
+SQL（Structured Query Language）
+结构化查询语言，是关系数据库的标准语言
 SQL是一个通用的、功能极强的关系数据库语言
 
 综合统一
@@ -226,22 +303,29 @@ SQL是一个通用的、功能极强的关系数据库语言
 语言简洁，易学易用
 
 SQL特点
+
+
 综合统一
+
 
 集数据定义语言（DDL），数据操纵语言（DML），数据控制语言（DCL）功能于一体。
 
+
 可以独立完成数据库生命周期中的全部活动：
 
-定义和修改、删除关系模式，定义和删除视图，插入数据，建立数据库; 
-对数据库中的数据进行查询和更新; 
+定义和修改、删除关系模式，定义和删除视图，插入数据，建立数据库;
+对数据库中的数据进行查询和更新;
 数据库重构和维护
 数据库安全性、完整性控制，以及事务控制
 嵌入式SQL和动态SQL定义
 
 
+
 用户数据库投入运行后，可根据需要随时逐步修改模式，不影响数据库的运行。
 
+
 数据操作符统一
+
 
 
 
@@ -253,86 +337,144 @@ SQL只要提出“做什么”，无须了解存取路径。
 
 面向集合的操作方式
 
-非关系数据模型采用面向记录的操作方式，操作对象是一条记录
 
-S ...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/2023/03/31/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%8607-parser-II/" title="编译原理07-parser-II"><img class="post-bg" src="/img/cover.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="编译原理07-parser-II"></a></div><div class="recent-post-info"><a class="article-title" href="/2023/03/31/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%8607-parser-II/" title="编译原理07-parser-II">编译原理07-parser-II</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2023-03-31T06:01:16.000Z" title="Created 2023-03-31 14:01:16">2023-03-31</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86/">编译原理</a></span></div><div class="content">七、递归下降的LL(1)语法分析器构建语法分析树：自顶向下 $vs.$ 自底向上
+非关系数据模型采用面向记录的操作方式，操作对 ...</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/2023/03/31/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%8607-parser-II/" title="编译原理07-parser-II"><img class="post-bg" src="/img/cover.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="编译原理07-parser-II"></a></div><div class="recent-post-info"><a class="article-title" href="/2023/03/31/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%8607-parser-II/" title="编译原理07-parser-II">编译原理07-parser-II</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2023-03-31T06:01:16.000Z" title="Created 2023-03-31 14:01:16">2023-03-31</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86/">编译原理</a></span></div><div class="content">七、递归下降的LL(1)语法分析器
+构建语法分析树：自顶向下 $vs.$ 自底向上
 
 只考虑无二义性的文法这意味着, 每个句子对应唯一的一棵语法分析树
 
-LL(1)语法分析器的特点自顶向下的自顶向下构建语法分析树
+LL(1)语法分析器的特点
+自顶向下的
+自顶向下构建语法分析树
+
+
 根结点是文法的起始符号$S$
+
 
 每个中间节点表示对某个非终结符应用某个产生式进行推导
 $Q: 选择哪个非终结符，以及选择哪个产生式$
 
+
 叶节点是词法单元流$w$ $
 仅包含终结符与特殊的文件结束符$$(EOF)$
 
+
 每个中间节点表示对某个非终结符应用某个产生式进行推导
 $Q：选择哪个非终结符，以及选择哪个产生式$
+
 
 在推导的每一步，$LL(1)$总是选择最左边的非终结符进行展开
 $LL(1)：从左向右读入词法单元$
 
 
-递归下降的递归下降的典型实现框架
+递归下降的
+递归下降的典型实现框架
+
 为每一个非终结符写一个递归函数
 内部按需调用其它的非终结符对应的递归函数，下降一层
 过程演示
 
+
 每次都选择语法分析树最左边的非终结符进行展开
 思考
+
 同样是展开非终结符 S, 为什么前两次选择了 S → (S + F), 而第三次选择了 S → F?
 
 因为它们面对的当前词法单元不同
-第一次与第二次展开时，只有第二条会产生小括号
- ...</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/2023/03/29/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%8606-parser-cfg/" title="编译原理06-parser-cfg"><img class="post-bg" src="/img/cover.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="编译原理06-parser-cfg"></a></div><div class="recent-post-info"><a class="article-title" href="/2023/03/29/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%8606-parser-cfg/" title="编译原理06-parser-cfg">编译原理06-parser-cfg</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2023-03-29T10:06:33.000Z" title="Created 2023-03-29 18:06:33">2023-03-29</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86/">编译原理</a></span></div><div class="content">六、上下文无关文法-CFGDefinition-(Context-Free Grammar(CFG), 上下文无关文法)上下文无关文法$G$是一个四元组$G &#x3D; (T,N,S,P)$
+第一次与第二次展开时 ...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/2023/03/29/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%8606-parser-cfg/" title="编译原理06-parser-cfg"><img class="post-bg" src="/img/cover.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="编译原理06-parser-cfg"></a></div><div class="recent-post-info"><a class="article-title" href="/2023/03/29/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%8606-parser-cfg/" title="编译原理06-parser-cfg">编译原理06-parser-cfg</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2023-03-29T10:06:33.000Z" title="Created 2023-03-29 18:06:33">2023-03-29</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86/">编译原理</a></span></div><div class="content">六、上下文无关文法-CFG
+Definition-(Context-Free Grammar(CFG), 上下文无关文法)
+上下文无关文法$G$是一个四元组$G = (T,N,S,P)$
+
 
 $T$是终结符号（Terminal）集合，对应于词法分析器产生的词法单元
 
+
 $N$是非终止符号（Non-terminal）集合
+
 
 $S$是开始（start）符号$(S \in N)$且唯一
 
-$P$是产生式（Production）集合$$A \in N \to \alpha \in (T \cup N)^*$$头部&#x2F;左部（Head）A：单个非终结符
-体部&#x2F;右部（Body）$\alpha$：终结符与非终结符构成的串，也可以是空串$\epsilon$
+
+$P$是产生式（Production）集合
+$$
+A \in N \to \alpha \in (T \cup N)^*
+$$
+头部/左部（Head）A：单个非终结符
+体部/右部（Body）$\alpha$：终结符与非终结符构成的串，也可以是空串$\epsilon$
 
 
 [Entended] Backus-Naur form ([E]BNF)
-CFG语义语义：上下文无关文法$G$定义了一个语言$L(G)$
+
+CFG
+语义
+语义：上下文无关文法$G$定义了一个语言$L(G)$
 语言是串的集合
-推导$$E \to E + E \mid E * E \mid (E) \mid -E \mid id$$
+推导
+$$
+E \to E + E \mid E * E \mid (E) \mid -E \mid id
+$$
 推导即是将某个产生式的左边替换成它的右边
-每一步推导需要选择替换哪 ...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/2023/03/24/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%8605-parser-antlr/" title="编译原理05-parser-antlr"><img class="post-bg" src="/img/cover.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="编译原理05-parser-antlr"></a></div><div class="recent-post-info"><a class="article-title" href="/2023/03/24/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%8605-parser-antlr/" title="编译原理05-parser-antlr">编译原理05-parser-antlr</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2023-03-24T07:09:01.000Z" title="Created 2023-03-24 15:09:01">2023-03-24</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86/">编译原理</a></span></div><div class="content">五、ANTLR 4 语法分析器语法分析二异性文法若文法G对同一句子产生不止一棵分析树，则称G是二义的。
+每一步推导需要选择替换 ...</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/2023/03/24/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%8605-parser-antlr/" title="编译原理05-parser-antlr"><img class="post-bg" src="/img/cover.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="编译原理05-parser-antlr"></a></div><div class="recent-post-info"><a class="article-title" href="/2023/03/24/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%8605-parser-antlr/" title="编译原理05-parser-antlr">编译原理05-parser-antlr</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2023-03-24T07:09:01.000Z" title="Created 2023-03-24 15:09:01">2023-03-24</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86/">编译原理</a></span></div><div class="content">五、ANTLR 4 语法分析器
+语法分析
+二异性文法
+若文法G对同一句子产生不止一棵分析树，则称G是二义的。
 If-Then-Else的二异性
-1234567891011121314//IfStat.g4stat : &#x27;if&#x27; expr &#x27;then&#x27; stat		 | &#x27;if&#x27; expr &#x27;then&#x27; stat &#x27;else&#x27; stat		 | expr		 ;-&gt;//IfStatOpenMatched.g4stat : matched_stat | open_statmatched_stat : &#x27;if&#x27; expr &#x27;then&#x27; matched_stat &#x27;else&#x27; matched_stat						 | expr						 ;open_stat : &#x27;if&#x27; expr &#x27;then&#x27; stat				  | &#x27;if&#x27; expr &#x27;then&#x27; m ...</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/2023/03/15/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%8604-automata/" title="编译原理04-automata"><img class="post-bg" src="/img/cover.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="编译原理04-automata"></a></div><div class="recent-post-info"><a class="article-title" href="/2023/03/15/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%8604-automata/" title="编译原理04-automata">编译原理04-automata</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2023-03-15T11:09:45.000Z" title="Created 2023-03-15 19:09:45">2023-03-15</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86/">编译原理</a></span></div><div class="content">四、自动机理论与词法分析器生成器自动机-Automation&#x2F;Automata两大要素：状态集S 和 状态转移函数$\delta$
-元胞自动机-Cellular Automation&#x2F;CA根据表达&#x2F;计算能力的强弱，自动机可以分为不同的层次
 
-目标正则表达式RE &#x3D;&gt; 词法分析器
+1234567891011121314//IfStat.g4stat : &#x27;if&#x27; expr &#x27;then&#x27; stat		 | &#x27;if&#x27; expr &#x27;then&#x27; stat &#x27;else&#x27; stat		 | expr		 ;-&gt;//IfStatOpenMatched.g4stat : matched_stat | open_statmatched_stat : &#x27;if&#x27; expr &#x27;then&#x27; matched_stat &#x27;else&#x27; matched_stat						 | expr						 ;open_stat : &#x27;if&#x27; expr &#x27;then&#x27; stat				  | &#x27;if&#x27; expr &#x27;then&#x2 ...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/2023/03/15/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%8604-automata/" title="编译原理04-automata"><img class="post-bg" src="/img/cover.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="编译原理04-automata"></a></div><div class="recent-post-info"><a class="article-title" href="/2023/03/15/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%8604-automata/" title="编译原理04-automata">编译原理04-automata</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2023-03-15T11:09:45.000Z" title="Created 2023-03-15 19:09:45">2023-03-15</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86/">编译原理</a></span></div><div class="content">四、自动机理论与词法分析器生成器
+自动机-Automation/Automata
+两大要素：状态集S 和 状态转移函数$\delta$
+元胞自动机-Cellular Automation/CA
+根据表达/计算能力的强弱，自动机可以分为不同的层次
 
-非自动性有穷自动机-NFA&#x2F;Nondeteministic Finite Automaton$A$是一个五元组 $A &#x3D; (\Sigma , S, s_{0},\delta,F)$:
+目标
+正则表达式RE =&gt; 词法分析器
+
+非自动性有穷自动机-NFA/Nondeteministic Finite Automaton
+$A$是一个五元组 $A = (\Sigma , S, s_{0},\delta,F)$:
 1.字母表$\Sigma$$(\epsilon \notin \Sigma)$
 2.有穷的状态集合$S$
 3.唯一的初始状态$s_{0} \in S$
-4.状态转移函数$ \delta $$$\delta : S \times (\Sigma \cup \lbrace \epsilon \rbrace) \to 2^S$$5.接受状态集合$F \subseteq S$
+4.状态转移函数$ \delta $
+$$
+\delta : S \times (\Sigma \cup \lbrace \epsilon \rbrace) \to 2^S
+$$
+5.接受状态集合$F \subseteq S$
 约定：所有没有对应出边的字符默认指向一个不存在的空状态$\varnothing$
 
-（非确定性） ...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/2023/03/02/%E6%95%B0%E6%8D%AE%E7%AE%A1%E7%90%86%E5%9F%BA%E7%A1%80chapter-02/" title="数据管理基础chapter_02"><img class="post-bg" src="/img/cover.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="数据管理基础chapter_02"></a></div><div class="recent-post-info"><a class="article-title" href="/2023/03/02/%E6%95%B0%E6%8D%AE%E7%AE%A1%E7%90%86%E5%9F%BA%E7%A1%80chapter-02/" title="数据管理基础chapter_02">数据管理基础chapter_02</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2023-03-02T08:05:16.000Z" title="Created 2023-03-02 16:05:16">2023-03-02</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E6%95%B0%E6%8D%AE%E7%AE%A1%E7%90%86%E5%9F%BA%E7%A1%80/">数据管理基础</a></span></div><div class="content">一、关系、关系模式和关系数据库域域是一组具有相同数据类型的值的集合。
-笛卡尔积（Cartesian Product）1.给定一组域D1，D2，…，Dn ，允许其中某些域是相同的。
-2.D1，D2，…，Dn的笛卡尔积为$$D_{1} \times D_{2} \times … \times D_{n} &#x3D; \lbrace (d_{1},d_{2},…,d_{n}) \mid d_{i} \in D_{i},i &#x3D; 1,2,…,n \rbrace$$性质：1)所有域的所有取值的一个组合 2)不能重复
-元组（Tuple）笛卡尔积中每一个元素（d1，d2，…，dn）叫作一个n元组（n-tuple）或简称元组
-分量（Component）笛卡尔积元素（d1，d2，…，dn）中的每一个值di叫作一个分量
-基数（Cardinal number）若Di（i＝1，2，…，n）为有限集，其基数为mi （i ＝ 1，2，… ，n），则D1×D2×…×Dn的基数M为：$$M &#x3D; \prod_{i &#x3D; 1}^n m_{i}$$
-关系（Relation）D1,D2,D3,…, ...</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/2023/03/01/first/" title="编译原理01-lexer-antlr"><img class="post-bg" src="/img/cover.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="编译原理01-lexer-antlr"></a></div><div class="recent-post-info"><a class="article-title" href="/2023/03/01/first/" title="编译原理01-lexer-antlr">编译原理01-lexer-antlr</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2023-03-01T11:51:11.000Z" title="Created 2023-03-01 19:51:11">2023-03-01</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86/">编译原理</a></span></div><div class="content">一、词法分析器词法分析器的三种设计方式词法分析器生成器，手写词法分析器，自动化词法分析器
-词法分析器生成器talk is cheap，show me code
-1234567891011121314151617181920212223242526272829303132333435363738394041424344454647grammar SimpleExpr;@header &#123;package simpleexpr;&#125;prog : stat* EOF ;stat : expr &#x27;;&#x27;     | ID &#x27;=&#x27; expr &#x27;;&#x27;     | &#x27;if&#x27; expr &#x27;;&#x27;     ;expr : expr (&#x27;*&#x27; | &#x27;/&#x27;) expr     | expr (&#x27;+&#x27; | &#x27;-&#x27;) expr     | &#x27;(&#x27; expr &#x27;)&#x27;     | ID   ...</div></div></div><nav id="pagination"><div class="pagination"><a class="extend prev" rel="prev" href="/"><i class="fas fa-chevron-left fa-fw"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://box.nju.edu.cn/f/8618b667f75848d78fe7/?dl=1" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Rain Sun</div><div class="author-info__description">Mia San Mia</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">19</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">8</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">5</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/SEBugMaker"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/SEBugMaker" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:sunbugmaker@gmail.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>Announcement</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Post</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2023/05/17/OS%E6%85%95%E8%AF%BE%E9%80%89%E6%8B%A9%E9%A2%98/" title="OS慕课选择题"><img src="https://box.nju.edu.cn/f/d3517339d62b421f8e47/?dl=1" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="OS慕课选择题"/></a><div class="content"><a class="title" href="/2023/05/17/OS%E6%85%95%E8%AF%BE%E9%80%89%E6%8B%A9%E9%A2%98/" title="OS慕课选择题">OS慕课选择题</a><time datetime="2023-05-17T11:53:33.000Z" title="Created 2023-05-17 19:53:33">2023-05-17</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/05/17/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%8614-ir-control/" title="编译原理14-ir-control"><img src="https://box.nju.edu.cn/f/8a62e97c0b774629afed/?dl=1" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="编译原理14-ir-control"/></a><div class="content"><a class="title" href="/2023/05/17/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%8614-ir-control/" title="编译原理14-ir-control">编译原理14-ir-control</a><time datetime="2023-05-17T09:58:54.000Z" title="Created 2023-05-17 17:58:54">2023-05-17</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/05/10/%E8%AE%AD%E7%BB%83AI%E6%AD%8C%E6%89%8B/" title="训练AI歌手"><img src="https://box.nju.edu.cn/f/ad55a6ba417b453d9d38/?dl=1" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="训练AI歌手"/></a><div class="content"><a class="title" href="/2023/05/10/%E8%AE%AD%E7%BB%83AI%E6%AD%8C%E6%89%8B/" title="训练AI歌手">训练AI歌手</a><time datetime="2023-05-10T11:23:37.000Z" title="Created 2023-05-10 19:23:37">2023-05-10</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/05/10/Compilers-Lab4-%E5%87%86%E5%A4%87%E5%B7%A5%E4%BD%9C/" title="Compilers_Lab4_准备工作"><img src="https://box.nju.edu.cn/f/d80911fc1fe74f029f0d/?dl=1" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Compilers_Lab4_准备工作"/></a><div class="content"><a class="title" href="/2023/05/10/Compilers-Lab4-%E5%87%86%E5%A4%87%E5%B7%A5%E4%BD%9C/" title="Compilers_Lab4_准备工作">Compilers_Lab4_准备工作</a><time datetime="2023-05-10T06:00:04.000Z" title="Created 2023-05-10 14:00:04">2023-05-10</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/05/09/OS-Lab3/" title="OS_Lab3"><img src="https://box.nju.edu.cn/f/7ce73298dc0241f086ba/?dl=1" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="OS_Lab3"/></a><div class="content"><a class="title" href="/2023/05/09/OS-Lab3/" title="OS_Lab3">OS_Lab3</a><time datetime="2023-05-09T14:04:51.000Z" title="Created 2023-05-09 22:04:51">2023-05-09</time></div></div></div></div><div class="card-widget card-categories"><div class="item-headline">
+（非确定性）有穷自动机是一类极其简单的计算装置
+它可以 ...</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/2023/03/02/%E6%95%B0%E6%8D%AE%E7%AE%A1%E7%90%86%E5%9F%BA%E7%A1%80chapter-02/" title="数据管理基础chapter_02"><img class="post-bg" src="/img/cover.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="数据管理基础chapter_02"></a></div><div class="recent-post-info"><a class="article-title" href="/2023/03/02/%E6%95%B0%E6%8D%AE%E7%AE%A1%E7%90%86%E5%9F%BA%E7%A1%80chapter-02/" title="数据管理基础chapter_02">数据管理基础chapter_02</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2023-03-02T08:05:16.000Z" title="Created 2023-03-02 16:05:16">2023-03-02</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E6%95%B0%E6%8D%AE%E7%AE%A1%E7%90%86%E5%9F%BA%E7%A1%80/">数据管理基础</a></span></div><div class="content">一、关系、关系模式和关系数据库
+域
+域是一组具有相同数据类型的值的集合。
+笛卡尔积（Cartesian Product）
+1.给定一组域D1，D2，…，Dn ，允许其中某些域是相同的。
+2.D1，D2，…，Dn的笛卡尔积为
+$$
+D_{1} \times D_{2} \times … \times D_{n} = \lbrace (d_{1},d_{2},…,d_{n}) \mid d_{i} \in D_{i},i = 1,2,…,n \rbrace
+$$
+性质：1)所有域的所有取值的一个组合 2)不能重复
+元组（Tuple）
+笛卡尔积中每一个元素（d1，d2，…，dn）叫作一个n元组（n-tuple）或简称元组
+分量（Component）
+笛卡尔积元素（d1，d2，…，dn）中的每一个值di叫作一个分量
+基数（Cardinal number）
+若Di（i＝1，2，…，n）为有限集，其基数为mi （i ＝ 1，2，… ，n），则D1×D2×…×Dn的基数M为：
+$$
+M = \prod_{i = 1}^n m_{i}
+$$
+关系（Relation）
+D1,D2,D3,…,Dn的笛卡尔 ...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/2023/03/01/first/" title="编译原理01-lexer-antlr"><img class="post-bg" src="/img/cover.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="编译原理01-lexer-antlr"></a></div><div class="recent-post-info"><a class="article-title" href="/2023/03/01/first/" title="编译原理01-lexer-antlr">编译原理01-lexer-antlr</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2023-03-01T11:51:11.000Z" title="Created 2023-03-01 19:51:11">2023-03-01</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86/">编译原理</a></span></div><div class="content">一、词法分析器
+词法分析器的三种设计方式
+词法分析器生成器，手写词法分析器，自动化词法分析器
+词法分析器生成器
+talk is cheap，show me code
+1234567891011121314151617181920212223242526272829303132333435363738394041424344454647grammar SimpleExpr;@header &#123;package simpleexpr;&#125;prog : stat* EOF ;stat : expr &#x27;;&#x27;     | ID &#x27;=&#x27; expr &#x27;;&#x27;     | &#x27;if&#x27; expr &#x27;;&#x27;     ;expr : expr (&#x27;*&#x27; | &#x27;/&#x27;) expr     | expr (&#x27;+&#x27; | &#x27;-&#x27;) expr     | &#x27;(&#x27; expr &#x27;)&#x27;     | I ...</div></div></div><nav id="pagination"><div class="pagination"><a class="extend prev" rel="prev" href="/"><i class="fas fa-chevron-left fa-fw"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://box.nju.edu.cn/f/8618b667f75848d78fe7/?dl=1" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Rain Sun</div><div class="author-info__description">Mia San Mia</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">20</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">8</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">5</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/SEBugMaker"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/SEBugMaker" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:sunbugmaker@gmail.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>Announcement</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Post</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2023/05/23/OS-homework02/" title="OS-homework02"><img src="https://box.nju.edu.cn/f/1f4bfc971b134fe1b81c/?dl=1" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="OS-homework02"/></a><div class="content"><a class="title" href="/2023/05/23/OS-homework02/" title="OS-homework02">OS-homework02</a><time datetime="2023-05-23T07:26:41.000Z" title="Created 2023-05-23 15:26:41">2023-05-23</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/05/17/OS%E6%85%95%E8%AF%BE%E9%80%89%E6%8B%A9%E9%A2%98/" title="OS慕课选择题"><img src="https://box.nju.edu.cn/f/d3517339d62b421f8e47/?dl=1" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="OS慕课选择题"/></a><div class="content"><a class="title" href="/2023/05/17/OS%E6%85%95%E8%AF%BE%E9%80%89%E6%8B%A9%E9%A2%98/" title="OS慕课选择题">OS慕课选择题</a><time datetime="2023-05-17T11:53:33.000Z" title="Created 2023-05-17 19:53:33">2023-05-17</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/05/17/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%8614-ir-control/" title="编译原理14-ir-control"><img src="https://box.nju.edu.cn/f/8a62e97c0b774629afed/?dl=1" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="编译原理14-ir-control"/></a><div class="content"><a class="title" href="/2023/05/17/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%8614-ir-control/" title="编译原理14-ir-control">编译原理14-ir-control</a><time datetime="2023-05-17T09:58:54.000Z" title="Created 2023-05-17 17:58:54">2023-05-17</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/05/10/%E8%AE%AD%E7%BB%83AI%E6%AD%8C%E6%89%8B/" title="训练AI歌手"><img src="https://box.nju.edu.cn/f/ad55a6ba417b453d9d38/?dl=1" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="训练AI歌手"/></a><div class="content"><a class="title" href="/2023/05/10/%E8%AE%AD%E7%BB%83AI%E6%AD%8C%E6%89%8B/" title="训练AI歌手">训练AI歌手</a><time datetime="2023-05-10T11:23:37.000Z" title="Created 2023-05-10 19:23:37">2023-05-10</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/05/10/Compilers-Lab4-%E5%87%86%E5%A4%87%E5%B7%A5%E4%BD%9C/" title="Compilers_Lab4_准备工作"><img src="https://box.nju.edu.cn/f/d80911fc1fe74f029f0d/?dl=1" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Compilers_Lab4_准备工作"/></a><div class="content"><a class="title" href="/2023/05/10/Compilers-Lab4-%E5%87%86%E5%A4%87%E5%B7%A5%E4%BD%9C/" title="Compilers_Lab4_准备工作">Compilers_Lab4_准备工作</a><time datetime="2023-05-10T06:00:04.000Z" title="Created 2023-05-10 14:00:04">2023-05-10</time></div></div></div></div><div class="card-widget card-categories"><div class="item-headline">
             <i class="fas fa-folder-open"></i>
             <span>Categories</span>
             
             </div>
             <ul class="card-category-list" id="aside-cat-list">
-            <li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"><span class="card-category-list-name">操作系统</span><span class="card-category-list-count">5</span></a><ul class="card-category-list child"><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E8%AF%BE%E7%A8%8B%E4%BD%9C%E4%B8%9A/"><span class="card-category-list-name">课程作业</span><span class="card-category-list-count">1</span></a></li></ul></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E6%95%B0%E6%8D%AE%E7%AE%A1%E7%90%86%E5%9F%BA%E7%A1%80/"><span class="card-category-list-name">数据管理基础</span><span class="card-category-list-count">3</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E6%97%A5%E5%B8%B8%E5%AD%A6%E4%B9%A0/"><span class="card-category-list-name">日常学习</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86/"><span class="card-category-list-name">编译原理</span><span class="card-category-list-count">10</span></a></li>
-            </ul></div><div class="card-widget card-tags"><div class="item-headline"><i class="fas fa-tags"></i><span>Tags</span></div><div class="card-tag-cloud"><a href="/tags/%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/" style="font-size: 1.1em; color: #999">期末复习</a> <a href="/tags/%E8%AF%BE%E7%A8%8B%E5%AE%9E%E9%AA%8C/" style="font-size: 1.18em; color: #999ca1">课程实验</a> <a href="/tags/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86/" style="font-size: 1.5em; color: #99a9bf">编译原理</a> <a href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" style="font-size: 1.34em; color: #99a3b0">操作系统</a> <a href="/tags/AI/" style="font-size: 1.1em; color: #999">AI</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E7%AE%A1%E7%90%86%E5%9F%BA%E7%A1%80/" style="font-size: 1.26em; color: #999fa8">数据管理基础</a> <a href="/tags/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B%E4%B8%93%E4%B8%9A%E8%AF%BE/" style="font-size: 1.42em; color: #99a6b7">软件工程专业课</a> <a href="/tags/%E6%97%A5%E5%B8%B8%E5%AD%A6%E4%B9%A0/" style="font-size: 1.1em; color: #999">日常学习</a></div></div><div class="card-widget card-archives"><div class="item-headline"><i class="fas fa-archive"></i><span>Archives</span></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/05/"><span class="card-archive-list-date">May 2023</span><span class="card-archive-list-count">5</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/04/"><span class="card-archive-list-date">April 2023</span><span class="card-archive-list-count">8</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/03/"><span class="card-archive-list-date">March 2023</span><span class="card-archive-list-count">6</span></a></li></ul></div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>Info</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">Article :</div><div class="item-count">19</div></div><div class="webinfo-item"><div class="item-name">UV :</div><div class="item-count" id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">PV :</div><div class="item-count" id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">Last Push :</div><div class="item-count" id="last-push-date" data-lastPushDate="2023-05-17T12:14:06.439Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2023 By Rain Sun</div><div class="framework-info"><span>Framework </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>Theme </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="Switch Between Light And Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle between single-column and double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="Setting"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="Back To Top"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><div class="js-pjax"><script>window.typedJSFn = {
+            <li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"><span class="card-category-list-name">操作系统</span><span class="card-category-list-count">6</span></a><ul class="card-category-list child"><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E8%AF%BE%E7%A8%8B%E4%BD%9C%E4%B8%9A/"><span class="card-category-list-name">课程作业</span><span class="card-category-list-count">2</span></a></li></ul></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E6%95%B0%E6%8D%AE%E7%AE%A1%E7%90%86%E5%9F%BA%E7%A1%80/"><span class="card-category-list-name">数据管理基础</span><span class="card-category-list-count">3</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E6%97%A5%E5%B8%B8%E5%AD%A6%E4%B9%A0/"><span class="card-category-list-name">日常学习</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86/"><span class="card-category-list-name">编译原理</span><span class="card-category-list-count">10</span></a></li>
+            </ul></div><div class="card-widget card-tags"><div class="item-headline"><i class="fas fa-tags"></i><span>Tags</span></div><div class="card-tag-cloud"><a href="/tags/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B%E4%B8%93%E4%B8%9A%E8%AF%BE/" style="font-size: 1.42em; color: #99a6b7">软件工程专业课</a> <a href="/tags/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86/" style="font-size: 1.5em; color: #99a9bf">编译原理</a> <a href="/tags/%E8%AF%BE%E7%A8%8B%E5%AE%9E%E9%AA%8C/" style="font-size: 1.18em; color: #999ca1">课程实验</a> <a href="/tags/AI/" style="font-size: 1.1em; color: #999">AI</a> <a href="/tags/%E6%97%A5%E5%B8%B8%E5%AD%A6%E4%B9%A0/" style="font-size: 1.1em; color: #999">日常学习</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E7%AE%A1%E7%90%86%E5%9F%BA%E7%A1%80/" style="font-size: 1.26em; color: #999fa8">数据管理基础</a> <a href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" style="font-size: 1.34em; color: #99a3b0">操作系统</a> <a href="/tags/%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/" style="font-size: 1.1em; color: #999">期末复习</a></div></div><div class="card-widget card-archives"><div class="item-headline"><i class="fas fa-archive"></i><span>Archives</span></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/05/"><span class="card-archive-list-date">May 2023</span><span class="card-archive-list-count">6</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/04/"><span class="card-archive-list-date">April 2023</span><span class="card-archive-list-count">8</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/03/"><span class="card-archive-list-date">March 2023</span><span class="card-archive-list-count">6</span></a></li></ul></div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>Info</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">Article :</div><div class="item-count">20</div></div><div class="webinfo-item"><div class="item-name">UV :</div><div class="item-count" id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">PV :</div><div class="item-count" id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">Last Push :</div><div class="item-count" id="last-push-date" data-lastPushDate="2023-05-23T07:30:27.141Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2023 By Rain Sun</div><div class="framework-info"><span>Framework </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>Theme </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="Switch Between Light And Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle between single-column and double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="Setting"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="Back To Top"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><div class="js-pjax"><script>window.typedJSFn = {
   init: (str) => {
     window.typed = new Typed('#subtitle', Object.assign({
       strings: str,
