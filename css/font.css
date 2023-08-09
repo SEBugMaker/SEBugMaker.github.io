@@ -1,0 +1,14 @@
+/*@font-face {*/
+/*    font-family: 'JetBrains Mono';*/
+/*    font-display: swap;*/
+/*    src: url('../font/JetBrainsMono-Regular.ttf') format("truetype");*/
+/*}*/
+@font-face{
+    font-family: 'JetBrains Mono Italic';
+    font-display: swap;
+    src: url('../font/JetBrainsMono-Italic.ttf') format("truetype");
+}
+
+body {
+    font-family: 'JetBrains Mono Italic';
+}
