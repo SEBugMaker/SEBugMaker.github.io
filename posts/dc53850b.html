@@ -1,0 +1,527 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"><title>MISE_hw4_体系结构作业 | Rain's Blog</title><meta name="author" content="Rain Sun"><meta name="copyright" content="Rain Sun"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="MISE_hw4_体系结构作业 本文用以记载在完成MISE体系结构作业时遇到的一些踩坑和困难。   操作系统：macOS(m1芯片)   使用到的部分网址：    文档工程：  凤凰架构：https:&#x2F;&#x2F;icyfenix.cn Vuepress 支持的文档工程：https:&#x2F;&#x2F;github.com&#x2F;fenixsoft&#x2F;awesome-fenix    前端工程：  Mock.js 支持的纯前端演示">
+<meta property="og:type" content="article">
+<meta property="og:title" content="MISE_hw4_体系结构作业">
+<meta property="og:url" content="http://sebugmaker.github.io/posts/dc53850b.html">
+<meta property="og:site_name" content="Rain&#39;s Blog">
+<meta property="og:description" content="MISE_hw4_体系结构作业 本文用以记载在完成MISE体系结构作业时遇到的一些踩坑和困难。   操作系统：macOS(m1芯片)   使用到的部分网址：    文档工程：  凤凰架构：https:&#x2F;&#x2F;icyfenix.cn Vuepress 支持的文档工程：https:&#x2F;&#x2F;github.com&#x2F;fenixsoft&#x2F;awesome-fenix    前端工程：  Mock.js 支持的纯前端演示">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://box.nju.edu.cn/f/3fdd71e61b504e9bb79d/?dl=1">
+<meta property="article:published_time" content="2023-10-24T11:41:10.000Z">
+<meta property="article:modified_time" content="2023-10-24T13:08:53.073Z">
+<meta property="article:author" content="Rain Sun">
+<meta property="article:tag" content="移动互联网软件工程">
+<meta property="article:tag" content="体系结构">
+<meta property="article:tag" content="课程作业">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://box.nju.edu.cn/f/3fdd71e61b504e9bb79d/?dl=1"><link rel="shortcut icon" href="https://box.nju.edu.cn/f/02da4b126cc04fd4951f/?dl=1"><link rel="canonical" href="http://sebugmaker.github.io/posts/dc53850b.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: true,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  }
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'MISE_hw4_体系结构作业',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2023-10-24 21:08:53'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+    win.getCSS = (url,id = false) => new Promise((resolve, reject) => {
+      const link = document.createElement('link')
+      link.rel = 'stylesheet'
+      link.href = url
+      if (id) link.id = id
+      link.onerror = reject
+      link.onload = link.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        link.onload = link.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(link)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><link rel="stylesheet" href="/css/font.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/zyoushuo/Blog@latest/hexo/css/loading_style_1.css" ><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/zyoushuo/Blog@latest/hexo/css/loading_style_2.css" ><!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.3.0"></head><body>
+    <div id='loader'>
+        
+            <div class="loading-left-bg"></div>
+            <div class="loading-right-bg"></div>
+            <div class="spinner-box">
+                <div class="configure-border-1">
+                    <div class="configure-core"></div>
+                </div>
+                <div class="configure-border-2">
+                    <div class="configure-core"></div>
+                </div>
+                <div class="loading-word">加载中...</div>
+            </div>
+        
+    </div>
+
+    <script>
+        var endLoading = function () {
+            document.body.style.overflow = 'auto';
+            document.getElementById('loader').classList.add("loading");
+        }
+        window.addEventListener('load',endLoading);
+    </script>
+<div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://box.nju.edu.cn/f/8618b667f75848d78fe7/?dl=1" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">22</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">10</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">6</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="/music/"><i class="fa-fw fas fa-music"></i><span> Music</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://box.nju.edu.cn/f/3fdd71e61b504e9bb79d/?dl=1')"><nav id="nav"><span id="blog-info"><a href="/" title="Rain's Blog"><span class="site-name">Rain's Blog</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="/music/"><i class="fa-fw fas fa-music"></i><span> Music</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">MISE_hw4_体系结构作业</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2023-10-24T11:41:10.000Z" title="发表于 2023-10-24 19:41:10">2023-10-24</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2023-10-24T13:08:53.073Z" title="更新于 2023-10-24 21:08:53">2023-10-24</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E7%A7%BB%E5%8A%A8%E4%BA%92%E8%81%94%E7%BD%91%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B/">移动互联网软件工程</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">1.1k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>4分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="MISE_hw4_体系结构作业"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1>MISE_hw4_体系结构作业</h1>
+<p>本文用以记载在完成MISE体系结构作业时遇到的一些踩坑和困难。</p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>操作系统：macOS(m1芯片)</p>
+</li>
+</ul>
+<p>使用到的部分网址：</p>
+<blockquote>
+<ul class="lvl-1">
+<li class="lvl-2">
+<p>文档工程：</p>
+<ul class="lvl-3">
+<li class="lvl-4">凤凰架构：<a target="_blank" rel="noopener" href="https://icyfenix.cn/">https://icyfenix.cn</a></li>
+<li class="lvl-4">Vuepress 支持的文档工程：<a target="_blank" rel="noopener" href="https://github.com/fenixsoft/awesome-fenix">https://github.com/fenixsoft/awesome-fenix</a></li>
+</ul>
+</li>
+<li class="lvl-2">
+<p>前端工程：</p>
+<ul class="lvl-3">
+<li class="lvl-4">Mock.js 支持的纯前端演示：<a target="_blank" rel="noopener" href="https://bookstore.icyfenix.cn/">https://bookstore.icyfenix.cn</a></li>
+<li class="lvl-4">Vue.js 2 实现前端工程：<a target="_blank" rel="noopener" href="https://github.com/fenixsoft/fenix-bookstore-frontend">https://github.com/fenixsoft/fenix-bookstore-frontend</a></li>
+</ul>
+</li>
+<li class="lvl-2">
+<p>后端工程：</p>
+<ul class="lvl-3">
+<li class="lvl-4">Spring Boot 实现单体架构：<a target="_blank" rel="noopener" href="https://github.com/fenixsoft/monolithic_arch_springboot">https://github.com/fenixsoft/monolithic_arch_springboot</a>
+<ul class="lvl-5">
+<li class="lvl-6"><a target="_blank" rel="noopener" href="https://nqq5jc94uf.feishu.cn/docx/FhujdzTCEouYiwxaxNfcZEF9nsb?from=from_copylink">https://nqq5jc94uf.feishu.cn/docx/FhujdzTCEouYiwxaxNfcZEF9nsb?from=from_copylink</a></li>
+</ul>
+</li>
+<li class="lvl-4">Kubernetes 为基础设施的微服务架构：<a target="_blank" rel="noopener" href="https://github.com/fenixsoft/microservice_arch_kubernetes">https://github.com/fenixsoft/microservice_arch_kubernetes</a>
+<ul class="lvl-5">
+<li class="lvl-6"><a target="_blank" rel="noopener" href="https://nqq5jc94uf.feishu.cn/docx/EffqdAcAnolcOrx7JFRcY7kBngg?from=from_copylink">https://nqq5jc94uf.feishu.cn/docx/EffqdAcAnolcOrx7JFRcY7kBngg?from=from_copylink</a></li>
+</ul>
+</li>
+<li class="lvl-4">Istio 为基础设施的服务网格架构：<a target="_blank" rel="noopener" href="https://github.com/fenixsoft/servicemesh_arch_istio">https://github.com/fenixsoft/servicemesh_arch_istio</a>
+<ul class="lvl-5">
+<li class="lvl-6"><a target="_blank" rel="noopener" href="https://nqq5jc94uf.feishu.cn/docx/ORCcdwpYaoRtvQxTyJJcw6iQnBf?from=from_copylink">https://nqq5jc94uf.feishu.cn/docx/ORCcdwpYaoRtvQxTyJJcw6iQnBf?from=from_copylink</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+<h2 id="Spring-Boot-实现单体架构">Spring Boot 实现单体架构</h2>
+<p>单体架构比较简单，在运行过程中未遇到困难，按照文档进行配置即可。</p>
+<h2 id="Kubernetes-为基础设施的微服务架构">Kubernetes 为基础设施的微服务架构</h2>
+<p>由于文档中以Windows操作系统为例，部分操作不适用于macOS。</p>
+<h3 id="下载Docker-Desktop">下载Docker Desktop</h3>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>官网有mac版本，下载正确版本安装即可</p>
+</li>
+<li class="lvl-2">
+<p>更换国内镜像</p>
+</li>
+</ul>
+<h3 id="安装kubernetes">安装kubernetes</h3>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>mac 新版本的 docker 自带 Kubernetes，Enable 后就会自动开启下载</p>
+</li>
+<li class="lvl-2">
+<p>在Settings中选中Kubernetes并apply，docker中k8s图标变绿即启动成功</p>
+</li>
+</ul>
+<h3 id="安装skaffold">安装skaffold</h3>
+<h4 id="curl安装">curl安装</h4>
+<p>参考<a target="_blank" rel="noopener" href="https://skaffold.dev/docs/install/">https://skaffold.dev/docs/install/</a></p>
+<p>运行以下命令：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># For macOS on ARMv8 (arm64)</span></span><br><span class="line">curl -Lo skaffold https://storage.googleapis.com/skaffold/releases/latest/skaffold-darwin-arm64 &amp;&amp; \</span><br><span class="line">sudo install skaffold /usr/local/bin/</span><br></pre></td></tr></table></figure>
+<h4 id="homebrew安装">homebrew安装</h4>
+<p>运行以下命令</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew install skaffold</span><br></pre></td></tr></table></figure>
+<h3 id="运行配置">运行配置</h3>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>下载源码后，运行./mvnw package可能会出现报错，需要运行以下命令</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">chmod</span> +x ./mvnw</span><br></pre></td></tr></table></figure>
+</li>
+<li class="lvl-2">
+<p>mac用户需要修改dockerfile中的内容，修改为</p>
+<figure class="highlight dockerfile"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">FROM</span> arm64v8/openjdk:<span class="number">11</span>-oracle</span><br></pre></td></tr></table></figure>
+</li>
+<li class="lvl-2">
+<p>如果使用java9以上编译，需要在pom文件中增加代码</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">argLine</span>&gt;</span>--add-opens=java.base/java.net=ALL-UNNAMED<span class="tag">&lt;/<span class="name">argLine</span>&gt;</span>  </span><br></pre></td></tr></table></figure>
+</li>
+<li class="lvl-2">
+<p>最后按照文档运行即可</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 编译打包</span></span><br><span class="line">./mvnw package</span><br><span class="line"><span class="comment"># 启动Skaffold# 此时将会自动打包Docker镜像，并部署到Kubernetes中</span></span><br><span class="line">skaffold dev</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="Istio-为基础设施的服务网格架构">Istio 为基础设施的服务网格架构</h2>
+<p>由于文档中以Windows操作系统为例，部分操作不适用于macOS。</p>
+<h3 id="安装Docker-Desktop，同上">安装Docker Desktop，同上</h3>
+<h3 id="安装kubectl">安装kubectl</h3>
+<p>参考<a target="_blank" rel="noopener" href="https://kubernetes.io/zh-cn/docs/tasks/tools/install-kubectl-macos/#install-kubectl-binary-with-curl-on-macos">https://kubernetes.io/zh-cn/docs/tasks/tools/install-kubectl-macos/#install-kubectl-binary-with-curl-on-macos</a></p>
+<h4 id="用curl安装">用curl安装</h4>
+<p>注意intel芯片还是m1芯片，本人为m1芯片</p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>运行以下命令下载最新的发行版</p>
+</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl -LO <span class="string">&quot;https://dl.k8s.io/release/<span class="subst">$(curl -L -s https://dl.k8s.io/release/stable.txt)</span>/bin/darwin/arm64/kubectl&quot;</span></span><br></pre></td></tr></table></figure>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>验证可执行文件</p>
+<blockquote>
+<p>下载 kubectl 的校验和文件</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl -LO <span class="string">&quot;https://dl.k8s.io/release/<span class="subst">$(curl -L -s https://dl.k8s.io/release/stable.txt)</span>/bin/darwin/arm64/kubectl.sha256&quot;</span></span><br></pre></td></tr></table></figure>
+<p>根据校验和文件，验证 kubectl</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span> <span class="string">&quot;<span class="subst">$(cat kubectl.sha256)</span>  kubectl&quot;</span> | shasum -a 256 --check</span><br></pre></td></tr></table></figure>
+</blockquote>
+</li>
+<li class="lvl-2">
+<p>将 kubectl 置为可执行文件</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">chmod</span> +x ./kubectl</span><br></pre></td></tr></table></figure>
+</li>
+<li class="lvl-2">
+<p>将可执行文件 kubectl 移动到系统可寻址路径 <code>PATH</code> 内的一个位置</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo <span class="built_in">mv</span> ./kubectl /usr/local/bin/kubectl</span><br><span class="line">sudo <span class="built_in">chown</span> root: /usr/local/bin/kubectl</span><br></pre></td></tr></table></figure>
+</li>
+<li class="lvl-2">
+<p>测试一下</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">kubectl version</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h4 id="用homebrew安装">用homebrew安装</h4>
+<p>运行以下命令</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew install kubectl</span><br></pre></td></tr></table></figure>
+<p>可以用同样的方法测试</p>
+<h3 id="在Docker-Desktop中启用Kubernetes">在Docker Desktop中启用Kubernetes</h3>
+<p>同上</p>
+<h3 id="安装Istio">安装Istio</h3>
+<h4 id="下载安装包">下载安装包</h4>
+<p>运行以下命令</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl -L https://istio.io/downloadIstio | sh -</span><br></pre></td></tr></table></figure>
+<p>把bin目录下的istioctl添加到PATH</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> ISTIO_HOME=/Users/larry/Software/istio/istio-1.10.3</span><br><span class="line"><span class="built_in">export</span> PATH=<span class="variable">$PATH</span>:<span class="variable">$ISTIO_HOME</span>/bin</span><br></pre></td></tr></table></figure>
+<h4 id="检测是否可以执行安装">检测是否可以执行安装</h4>
+<p>运行以下命令</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">istioctl x precheck</span><br></pre></td></tr></table></figure>
+<p>如果可以安装会得到<code>✔ No issues found when checking the cluster. Istio is safe to install or upgrade!</code></p>
+<h4 id="安装">安装</h4>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">istioctl install</span><br></pre></td></tr></table></figure>
+<h4 id="简单的检查">简单的检查</h4>
+<p>运行以下命令</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 检查istio-system命令空间下的Pod</span></span><br><span class="line">$ kubectl get pod -n istio-system</span><br><span class="line"><span class="comment"># 检查资源</span></span><br><span class="line">$ kubectl api-resources | grep istio</span><br></pre></td></tr></table></figure>
+<h4 id="以demo方式安装">以demo方式安装</h4>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">istioctl manifest apply --<span class="built_in">set</span> profile=demo</span><br></pre></td></tr></table></figure>
+<h3 id="安装skaffold-2">安装skaffold</h3>
+<p>同上</p>
+<h3 id="运行配置-2">运行配置</h3>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>下载源码后，运行./mvnw package可能会出现报错，需要运行以下命令</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">chmod</span> +x ./mvnw</span><br></pre></td></tr></table></figure>
+</li>
+<li class="lvl-2">
+<p>mac用户需要修改dockerfile中的内容，修改为</p>
+<figure class="highlight dockerfile"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">FROM</span> arm64v8/openjdk:<span class="number">11</span>-oracle</span><br></pre></td></tr></table></figure>
+</li>
+<li class="lvl-2">
+<p>如果使用java9以上编译，需要在pom文件中增加代码</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">argLine</span>&gt;</span>--add-opens=java.base/java.net=ALL-UNNAMED<span class="tag">&lt;/<span class="name">argLine</span>&gt;</span>  </span><br></pre></td></tr></table></figure>
+</li>
+<li class="lvl-2">
+<p>如果运行./mvnw package遇到payment部分false，可以根据报错修改pom.xml</p>
+<p>例如，这是我修改后的pom.xml文件的部分内容</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">argLine</span>&gt;</span>-Dfile.encoding=UTF-8<span class="tag">&lt;/<span class="name">argLine</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">argLine</span>&gt;</span></span><br><span class="line">    --add-opens=java.base/java.net=ALL-UNNAMED</span><br><span class="line">    --add-opens=java.base/java.lang.invoke=ALL-UNNAMED</span><br><span class="line"><span class="tag">&lt;/<span class="name">argLine</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li class="lvl-2">
+<p>最后按照文档运行即可</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 编译打包</span></span><br><span class="line">./mvnw package</span><br><span class="line"><span class="comment"># 启动Skaffold# 此时将会自动打包Docker镜像，并部署到Kubernetes中</span></span><br><span class="line">skaffold dev</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="http://sebugmaker.github.io">Rain Sun</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://sebugmaker.github.io/posts/dc53850b.html">http://sebugmaker.github.io/posts/dc53850b.html</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://sebugmaker.github.io" target="_blank">Rain's Blog</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E7%A7%BB%E5%8A%A8%E4%BA%92%E8%81%94%E7%BD%91%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B/">移动互联网软件工程</a><a class="post-meta__tags" href="/tags/%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84/">体系结构</a><a class="post-meta__tags" href="/tags/%E8%AF%BE%E7%A8%8B%E4%BD%9C%E4%B8%9A/">课程作业</a></div><div class="post_share"><div class="social-share" data-image="https://box.nju.edu.cn/f/3fdd71e61b504e9bb79d/?dl=1" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/posts/c39bb1b9.html" title="GO学习第二章"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://box.nju.edu.cn/f/ddb1bd2caae242f9a7a3/?dl=1" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">GO学习第二章</div></div></a></div></nav><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="gitalk-container"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://box.nju.edu.cn/f/8618b667f75848d78fe7/?dl=1" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Rain Sun</div><div class="author-info__description">Mia San Mia</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">22</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">10</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">6</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/SEBugMaker"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/SEBugMaker" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:sunbugmaker@gmail.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">MISE_hw4_体系结构作业</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Spring-Boot-%E5%AE%9E%E7%8E%B0%E5%8D%95%E4%BD%93%E6%9E%B6%E6%9E%84"><span class="toc-number">1.1.</span> <span class="toc-text">Spring Boot 实现单体架构</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Kubernetes-%E4%B8%BA%E5%9F%BA%E7%A1%80%E8%AE%BE%E6%96%BD%E7%9A%84%E5%BE%AE%E6%9C%8D%E5%8A%A1%E6%9E%B6%E6%9E%84"><span class="toc-number">1.2.</span> <span class="toc-text">Kubernetes 为基础设施的微服务架构</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%8B%E8%BD%BDDocker-Desktop"><span class="toc-number">1.2.1.</span> <span class="toc-text">下载Docker Desktop</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%89%E8%A3%85kubernetes"><span class="toc-number">1.2.2.</span> <span class="toc-text">安装kubernetes</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%89%E8%A3%85skaffold"><span class="toc-number">1.2.3.</span> <span class="toc-text">安装skaffold</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#curl%E5%AE%89%E8%A3%85"><span class="toc-number">1.2.3.1.</span> <span class="toc-text">curl安装</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#homebrew%E5%AE%89%E8%A3%85"><span class="toc-number">1.2.3.2.</span> <span class="toc-text">homebrew安装</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BF%90%E8%A1%8C%E9%85%8D%E7%BD%AE"><span class="toc-number">1.2.4.</span> <span class="toc-text">运行配置</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Istio-%E4%B8%BA%E5%9F%BA%E7%A1%80%E8%AE%BE%E6%96%BD%E7%9A%84%E6%9C%8D%E5%8A%A1%E7%BD%91%E6%A0%BC%E6%9E%B6%E6%9E%84"><span class="toc-number">1.3.</span> <span class="toc-text">Istio 为基础设施的服务网格架构</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%89%E8%A3%85Docker-Desktop%EF%BC%8C%E5%90%8C%E4%B8%8A"><span class="toc-number">1.3.1.</span> <span class="toc-text">安装Docker Desktop，同上</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%89%E8%A3%85kubectl"><span class="toc-number">1.3.2.</span> <span class="toc-text">安装kubectl</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%94%A8curl%E5%AE%89%E8%A3%85"><span class="toc-number">1.3.2.1.</span> <span class="toc-text">用curl安装</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%94%A8homebrew%E5%AE%89%E8%A3%85"><span class="toc-number">1.3.2.2.</span> <span class="toc-text">用homebrew安装</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9C%A8Docker-Desktop%E4%B8%AD%E5%90%AF%E7%94%A8Kubernetes"><span class="toc-number">1.3.3.</span> <span class="toc-text">在Docker Desktop中启用Kubernetes</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%89%E8%A3%85Istio"><span class="toc-number">1.3.4.</span> <span class="toc-text">安装Istio</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%8B%E8%BD%BD%E5%AE%89%E8%A3%85%E5%8C%85"><span class="toc-number">1.3.4.1.</span> <span class="toc-text">下载安装包</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%A3%80%E6%B5%8B%E6%98%AF%E5%90%A6%E5%8F%AF%E4%BB%A5%E6%89%A7%E8%A1%8C%E5%AE%89%E8%A3%85"><span class="toc-number">1.3.4.2.</span> <span class="toc-text">检测是否可以执行安装</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AE%89%E8%A3%85"><span class="toc-number">1.3.4.3.</span> <span class="toc-text">安装</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%AE%80%E5%8D%95%E7%9A%84%E6%A3%80%E6%9F%A5"><span class="toc-number">1.3.4.4.</span> <span class="toc-text">简单的检查</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BB%A5demo%E6%96%B9%E5%BC%8F%E5%AE%89%E8%A3%85"><span class="toc-number">1.3.4.5.</span> <span class="toc-text">以demo方式安装</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%89%E8%A3%85skaffold-2"><span class="toc-number">1.3.5.</span> <span class="toc-text">安装skaffold</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BF%90%E8%A1%8C%E9%85%8D%E7%BD%AE-2"><span class="toc-number">1.3.6.</span> <span class="toc-text">运行配置</span></a></li></ol></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/posts/dc53850b.html" title="MISE_hw4_体系结构作业"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://box.nju.edu.cn/f/3fdd71e61b504e9bb79d/?dl=1" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="MISE_hw4_体系结构作业"/></a><div class="content"><a class="title" href="/posts/dc53850b.html" title="MISE_hw4_体系结构作业">MISE_hw4_体系结构作业</a><time datetime="2023-10-24T11:41:10.000Z" title="发表于 2023-10-24 19:41:10">2023-10-24</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/c39bb1b9.html" title="GO学习第二章"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://box.nju.edu.cn/f/ddb1bd2caae242f9a7a3/?dl=1" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="GO学习第二章"/></a><div class="content"><a class="title" href="/posts/c39bb1b9.html" title="GO学习第二章">GO学习第二章</a><time datetime="2023-08-18T00:09:01.000Z" title="发表于 2023-08-18 08:09:01">2023-08-18</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/f38d5d61.html" title="GO学习第一章"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://box.nju.edu.cn/f/ddb1bd2caae242f9a7a3/?dl=1" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="GO学习第一章"/></a><div class="content"><a class="title" href="/posts/f38d5d61.html" title="GO学习第一章">GO学习第一章</a><time datetime="2023-08-17T12:40:11.000Z" title="发表于 2023-08-17 20:40:11">2023-08-17</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/35078.html" title="OS-homework02"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://box.nju.edu.cn/f/1f4bfc971b134fe1b81c/?dl=1" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="OS-homework02"/></a><div class="content"><a class="title" href="/posts/35078.html" title="OS-homework02">OS-homework02</a><time datetime="2023-05-23T07:26:41.000Z" title="发表于 2023-05-23 15:26:41">2023-05-23</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/58345.html" title="OS慕课选择题"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://box.nju.edu.cn/f/d3517339d62b421f8e47/?dl=1" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="OS慕课选择题"/></a><div class="content"><a class="title" href="/posts/58345.html" title="OS慕课选择题">OS慕课选择题</a><time datetime="2023-05-17T11:53:33.000Z" title="发表于 2023-05-17 19:53:33">2023-05-17</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2023 By Rain Sun</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js"></script><div class="js-pjax"><script>if (!window.MathJax) {
+  window.MathJax = {
+    tex: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"]],
+      tags: 'ams'
+    },
+    chtml: {
+      scale: 1.1
+    },
+    options: {
+      renderActions: {
+        findScript: [10, doc => {
+          for (const node of document.querySelectorAll('script[type^="math/tex"]')) {
+            const display = !!node.type.match(/; *mode=display/)
+            const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display)
+            const text = document.createTextNode('')
+            node.parentNode.replaceChild(text, node)
+            math.start = {node: text, delim: '', n: 0}
+            math.end = {node: text, delim: '', n: 0}
+            doc.math.push(math)
+          }
+        }, ''],
+        insertScript: [200, () => {
+          document.querySelectorAll('mjx-container').forEach(node => {
+            if (node.hasAttribute('display')) {
+              btf.wrap(node, 'div', { class: 'mathjax-overflow' })
+            } else {
+              btf.wrap(node, 'span', { class: 'mathjax-overflow' })
+            }
+          });
+        }, '', false]
+      }
+    }
+  }
+  
+  const script = document.createElement('script')
+  script.src = 'https://cdn.jsdelivr.net/npm/mathjax/es5/tex-mml-chtml.min.js'
+  script.id = 'MathJax-script'
+  script.async = true
+  document.head.appendChild(script)
+} else {
+  MathJax.startup.document.state(0)
+  MathJax.texReset()
+  MathJax.typesetPromise()
+}</script><script>function loadGitalk () {
+  function initGitalk () {
+    var gitalk = new Gitalk(Object.assign({
+      clientID: '20a429832da2e6e476d2',
+      clientSecret: '1e0566074172e8fdbba6822aac63387246007855',
+      repo: 'SEBugMaker',
+      owner: 'SEBugMaker',
+      admin: ['SEBugMaker'],
+      id: '0333ba357d21d99a7967491c0fc0938d',
+      updateCountCallback: commentCount
+    },null))
+
+    gitalk.render('gitalk-container')
+  }
+
+  if (typeof Gitalk === 'function') initGitalk()
+  else {
+    getCSS('https://cdn.jsdelivr.net/npm/gitalk/dist/gitalk.min.css')
+    getScript('https://cdn.jsdelivr.net/npm/gitalk/dist/gitalk.min.js').then(initGitalk)
+  }
+}
+
+function commentCount(n){
+  let isCommentCount = document.querySelector('#post-meta .gitalk-comment-count')
+  if (isCommentCount) {
+    isCommentCount.innerHTML= n
+  }
+}
+
+if ('Gitalk' === 'Gitalk' || !false) {
+  if (false) btf.loadComment(document.getElementById('gitalk-container'), loadGitalk)
+  else loadGitalk()
+} else {
+  function loadOtherComment () {
+    loadGitalk()
+  }
+}</script></div><div class="aplayer no-destroy" data-id="8251277445" data-server="netease" data-type="playlist" data-fixed="true" data-autoplay="false" data-lrcType="-1"> </div><canvas class="fireworks" mobile="false"></canvas><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/fireworks.min.js"></script><script defer="defer" id="fluttering_ribbon" mobile="true" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/canvas-fluttering-ribbon.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = true;
+POWERMODE.mobile = false;
+document.body.addEventListener('input', POWERMODE);
+</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/metingjs/dist/Meting.min.js"></script><script src="https://cdn.jsdelivr.net/npm/pjax/pjax.min.js"></script><script>let pjaxSelectors = ["head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: false,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:send', function () {
+
+  // removeEventListener scroll 
+  window.tocScrollFn && window.removeEventListener('scroll', window.tocScrollFn)
+  window.scrollCollect && window.removeEventListener('scroll', scrollCollect)
+
+  document.getElementById('rightside').style.cssText = "opacity: ''; transform: ''"
+  
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
+
+  typeof typed === 'object' && typed.destroy()
+
+  //reset readmode
+  const $bodyClassList = document.body.classList
+  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
+
+  typeof disqusjs === 'object' && disqusjs.destroy()
+})
+
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
+
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+  })
+
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof chatBtnFn === 'function' && chatBtnFn()
+  typeof panguInit === 'function' && panguInit()
+
+  // google analytics
+  typeof gtag === 'function' && gtag('config', '', {'page_path': window.location.pathname});
+
+  // baidu analytics
+  typeof _hmt === 'object' && _hmt.push(['_trackPageview',window.location.pathname]);
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+})
+
+document.addEventListener('pjax:error', (e) => {
+  if (e.request.status === 404) {
+    pjax.loadUrl('/404.html')
+  }
+})</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html><div id="sakana-widget" style="position:fixed;bottom:0px;right:0px;"></div><script>function initSakanaWidget() {
+  new SakanaWidget().mount('#sakana-widget');
+}</script><script async="" onload="initSakanaWidget()" src="https://cdn.jsdelivr.net/npm/sakana-widget@2.2.1/lib/sakana.min.js"></script>
