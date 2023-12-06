@@ -1,0 +1,907 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"><title>嵌入式系统概论期末复习 | Rain's Blog</title><meta name="author" content="Rain Sun"><meta name="copyright" content="Rain Sun"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="嵌入式系统概论复习 lecture 1 - 嵌入式系统概述 嵌入式系统的定义   “嵌入式系统”实际上是“嵌入式计算机系统”的简称   IEEE（国际电气和电子工程师协会）的定义：嵌入式系统是“用于控制、监视或者辅助操作机器和设备的装置” (Devices used to control, monitor, or assist the operation of equipment, machine">
+<meta property="og:type" content="article">
+<meta property="og:title" content="嵌入式系统概论期末复习">
+<meta property="og:url" content="http://sebugmaker.github.io/posts/612fa1e.html">
+<meta property="og:site_name" content="Rain&#39;s Blog">
+<meta property="og:description" content="嵌入式系统概论复习 lecture 1 - 嵌入式系统概述 嵌入式系统的定义   “嵌入式系统”实际上是“嵌入式计算机系统”的简称   IEEE（国际电气和电子工程师协会）的定义：嵌入式系统是“用于控制、监视或者辅助操作机器和设备的装置” (Devices used to control, monitor, or assist the operation of equipment, machine">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://box.nju.edu.cn/f/23f2833d55ac43308a73/?dl=1">
+<meta property="article:published_time" content="2023-12-06T12:48:13.000Z">
+<meta property="article:modified_time" content="2023-12-06T13:02:38.939Z">
+<meta property="article:author" content="Rain Sun">
+<meta property="article:tag" content="嵌入式">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://box.nju.edu.cn/f/23f2833d55ac43308a73/?dl=1"><link rel="shortcut icon" href="https://box.nju.edu.cn/f/02da4b126cc04fd4951f/?dl=1"><link rel="canonical" href="http://sebugmaker.github.io/posts/612fa1e.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: true,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  }
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '嵌入式系统概论期末复习',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2023-12-06 21:02:38'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+    win.getCSS = (url,id = false) => new Promise((resolve, reject) => {
+      const link = document.createElement('link')
+      link.rel = 'stylesheet'
+      link.href = url
+      if (id) link.id = id
+      link.onerror = reject
+      link.onload = link.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        link.onload = link.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(link)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><link rel="stylesheet" href="/css/font.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/zyoushuo/Blog@latest/hexo/css/loading_style_1.css" ><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/zyoushuo/Blog@latest/hexo/css/loading_style_2.css" ><!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.3.0"></head><body>
+    <div id='loader'>
+        
+            <div class="loading-left-bg"></div>
+            <div class="loading-right-bg"></div>
+            <div class="spinner-box">
+                <div class="configure-border-1">
+                    <div class="configure-core"></div>
+                </div>
+                <div class="configure-border-2">
+                    <div class="configure-core"></div>
+                </div>
+                <div class="loading-word">加载中...</div>
+            </div>
+        
+    </div>
+
+    <script>
+        var endLoading = function () {
+            document.body.style.overflow = 'auto';
+            document.getElementById('loader').classList.add("loading");
+        }
+        window.addEventListener('load',endLoading);
+    </script>
+<div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://box.nju.edu.cn/f/8618b667f75848d78fe7/?dl=1" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">23</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">11</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">7</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="/music/"><i class="fa-fw fas fa-music"></i><span> Music</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://box.nju.edu.cn/f/23f2833d55ac43308a73/?dl=1')"><nav id="nav"><span id="blog-info"><a href="/" title="Rain's Blog"><span class="site-name">Rain's Blog</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="/music/"><i class="fa-fw fas fa-music"></i><span> Music</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">嵌入式系统概论期末复习</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2023-12-06T12:48:13.000Z" title="发表于 2023-12-06 20:48:13">2023-12-06</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2023-12-06T13:02:38.939Z" title="更新于 2023-12-06 21:02:38">2023-12-06</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/">期末复习</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">4.7k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>14分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="嵌入式系统概论期末复习"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1>嵌入式系统概论复习</h1>
+<h2 id="lecture-1-嵌入式系统概述">lecture 1 - 嵌入式系统概述</h2>
+<h3 id="嵌入式系统的定义">嵌入式系统的定义</h3>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>“嵌入式系统”实际上是“嵌入式计算机系统”的简称</p>
+</li>
+<li class="lvl-2">
+<p><mark>IEEE</mark>（国际电气和电子工程师协会）的定义：嵌入式系统是“用于控制、监视或者辅助操作机器和设备的装置” (Devices used to control, monitor, or assist the operation of equipment, machinery or plants)。</p>
+<p>该定义是从应用上考虑的，嵌入式系统是软件和硬件的综合体，还可以涵盖机电等附属装置</p>
+</li>
+<li class="lvl-2">
+<p><mark>国内普遍被认同的定义</mark>：嵌入式系统是“以应用为中心，以计算机技术为基础，软硬件可裁减，适用于应用系统对功能、可靠性、成本、体积、功耗有严格要求的专用计算机系统”。</p>
+<p>嵌入式系统就是一个具有特定功能或用途的隐藏在某种设备中的计算机软硬件集合体，没有固定的特征形状。</p>
+</li>
+</ul>
+<h3 id="嵌入式系统三要素">嵌入式系统三要素</h3>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>嵌入性：嵌入到对象体系中，有对象环境要求</p>
+</li>
+<li class="lvl-2">
+<p>专用型：软、硬件按对象要求设计、裁减</p>
+</li>
+<li class="lvl-2">
+<p>计算机：实现对象的智能化功能</p>
+</li>
+</ul>
+<h3 id="无处不在的嵌入式">无处不在的嵌入式</h3>
+<h4 id="CPS">CPS</h4>
+<p>信息物理系统，Cyber-Physical System (CPS)，计算进程和物理进程的统一体，集计算、通信、控制于一体的下一代智能系统，由嵌入式系统、互联网和控制器组成</p>
+<h4 id="WSN">WSN</h4>
+<p>无线感知网络，Wireless sensor network（WSN），是由许多在空间中分布的自动装置组成的一种无线通信计算机网络，这些装置使用传感器协作地监控不同位置的物理或环境状况（比如温度、声音、振动、压力、运动或污染物）。无线传感器网络的发展最初起源于战场监测等军事应用。而现今无线传感器网络被应用于很多民用领域，如环境与生态监测、健康监护、家居自动化以及交通控制等。</p>
+<h4 id="IOT">IOT</h4>
+<p>物联网，Internet of Things (IoT) ，通过射频识别(RFID)、红外感应器、全球定位系统、激光扫描器等信息传感设备，按约定的协议，把任何物品与互联网相连接，进行信息交换和通信，以实现智能化识别、定位、跟踪、监控和管理的一种网络概念</p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>实现任何时间、任何地点，人、机、物的互联互通</p>
+</li>
+<li class="lvl-2">
+<p>互联、协同</p>
+</li>
+<li class="lvl-2">
+<p>面向生产的物联网技术开发被称为“工业4.0”</p>
+</li>
+</ul>
+<h3 id="嵌入式系统组成">嵌入式系统组成</h3>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p><mark>嵌⼊式系统⼀般由嵌⼊式硬件和软件组成</mark></p>
+<ul class="lvl-2">
+<li class="lvl-4">硬件以微处理器为核⼼集成存储器和系统专⽤的输⼊/输出设备</li>
+<li class="lvl-4">软件包括：初始化代码及驱动、嵌⼊式操作系统和应⽤程序等，这些软件有机地结合在⼀起，形成系统特定的⼀体化软件</li>
+</ul>
+</li>
+<li class="lvl-2">
+<p>从上至下依次为：应用软件 - 中间件 - 运行/实时内核 - 驱动 - 系统硬件</p>
+</li>
+</ul>
+<h3 id="与通用计算机的区别">与通用计算机的区别</h3>
+-20231206205324935.(null))
+<h3 id="嵌入式系统的特点">嵌入式系统的特点</h3>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>嵌入式系统通常是形式多样、面向特定应用的</p>
+<ul class="lvl-2">
+<li class="lvl-4">一般用于特定的任务</li>
+<li class="lvl-4">通常都具有低功耗、体积小、集成度高等特点</li>
+<li class="lvl-4">应用程序和操作系统两种软件的一体化程序</li>
+</ul>
+</li>
+<li class="lvl-2">
+<p>嵌入式系统得到多种类型的处理器和处理器体系结构的支持</p>
+<ul class="lvl-2">
+<li class="lvl-4">可采用多种类型的处理器和处理器体系结构</li>
+</ul>
+</li>
+<li class="lvl-2">
+<p>嵌入式系统通常极其关注成本</p>
+<ul class="lvl-2">
+<li class="lvl-4">一次性的开发成本NRE(Non-Recurring Engineering)成本</li>
+<li class="lvl-4">产品成本:硬件BOM、外壳包装和软件版税等</li>
+<li class="lvl-4">批量产品的总体成本=NRE成本+每个产品成本*产品总量</li>
+<li class="lvl-4">每个产品的最后成本=总体成本/产品总量=NRE成本/产品总量+每个产品成本</li>
+</ul>
+</li>
+<li class="lvl-2">
+<p>嵌入式系统有实时性和可靠性的要求</p>
+<ul class="lvl-2">
+<li class="lvl-4">大多数实时系统都是嵌入式系统，嵌入式系统多数有实时性的要求</li>
+<li class="lvl-4">一般要求具有出错处理和自动复位功能</li>
+</ul>
+</li>
+<li class="lvl-2">
+<p>嵌入式系统使用的操作系统一般是适应多种处理器、可剪裁、轻量型、实时可靠、可固化的嵌入式操作系统</p>
+<ul class="lvl-2">
+<li class="lvl-4">嵌入式操作系统规模小</li>
+</ul>
+</li>
+<li class="lvl-2">
+<p>嵌入式系统开发需要专门工具和特殊方法</p>
+<ul class="lvl-2">
+<li class="lvl-4">开发环境包括专门的开发工具（包括设计、编译、调试、测试等工具），采用交叉开发的方式进行</li>
+</ul>
+</li>
+</ul>
+<h3 id="嵌入式系统分类">嵌入式系统分类</h3>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>按嵌入式处理器的位数来分类</p>
+<ul class="lvl-2">
+<li class="lvl-4">4，8位已经大量应用</li>
+<li class="lvl-4">16位</li>
+<li class="lvl-4">32位成为主流</li>
+<li class="lvl-4">64位⾼度复杂的、⾼速的嵌⼊式系统已开始采⽤</li>
+</ul>
+</li>
+<li class="lvl-2">
+<p>按应用来分类</p>
+<ul class="lvl-2">
+<li class="lvl-4">移动互联网、可穿戴设备、生物仿真、环境工程、信息通讯、智能农业、智慧交通等。</li>
+</ul>
+</li>
+<li class="lvl-2">
+<p>按速度分类</p>
+<ul class="lvl-2">
+<li class="lvl-4">强实时系统, 其系统响应时间在毫秒或微秒级；</li>
+<li class="lvl-4">⼀般实时系统, 其系统响应时间在⼏秒的数量级上,其实时性的要求⽐强实时系统要差⼀些；</li>
+<li class="lvl-4">弱实时系统, 其系统响应时间约为数⼗秒或更⻓。这种系统的响应时间可能随系统负载的轻重⽽变化。</li>
+</ul>
+</li>
+<li class="lvl-2">
+<p>按确定性来分类</p>
+<ul class="lvl-2">
+<li class="lvl-4">硬实时系统：系统对系统响应时间有严格的要求，如果系统响应时间不能满⾜，就要引起系统崩溃或致命的错误。</li>
+<li class="lvl-4">软实时系统：系统对系统响应时间有要求，但是如果系统响应时间不能满⾜，不会导致系统出现致命的错误或崩溃。</li>
+</ul>
+</li>
+<li class="lvl-2">
+<p>按嵌入式系统软件复杂程度来分类</p>
+<ul class="lvl-2">
+<li class="lvl-4">循环轮询系统、有限状态机系统、前后台系统、单处理器多任务系统、多处理器多任务系统。</li>
+</ul>
+</li>
+</ul>
+<h2 id="lecture-2-嵌⼊式系统设计⽅法">lecture 2 - 嵌⼊式系统设计⽅法</h2>
+<h3 id="嵌入式系统设计所面临的挑战">嵌入式系统设计所面临的挑战</h3>
+<ol>
+<li class="lvl-3">
+<p>需要多少硬件？</p>
+</li>
+<li class="lvl-3">
+<p>如何满足时限需求，如何处理多项功能在时间上的协同关系？</p>
+</li>
+<li class="lvl-3">
+<p>如何降低系统的功耗？</p>
+</li>
+<li class="lvl-3">
+<p>如何设计以保证系统可升级？</p>
+</li>
+<li class="lvl-3">
+<p>如何保证系统可靠地工作？</p>
+</li>
+</ol>
+<h3 id="传统的嵌入式开发过程">传统的嵌入式开发过程</h3>
+<p>1.系统在一开始就被划分为软件和硬件两大部分</p>
+<p>2.软件和硬件独立进行开发设计</p>
+<p>3.经常采用“硬件优先”方法</p>
+<p>问题：</p>
+<p>1.软硬件之间的交互受到很大限制：凭经验划分软硬件，软硬件之间的相互性能影响很难评估。</p>
+<p>2.系统集成滞后，一次性工程费用过高。</p>
+<p>3.设计质量差、设计修改难、研制周期不能得到保障。</p>
+<h3 id="软硬件协同设计-HW-SW-Co-design">软硬件协同设计 HW/SW Co-design</h3>
+<p>1.软硬件协同设计是指对系统中的软硬件部分使用统一的描述和工具进行集成开发，可完成全系统的设计验证并跨越软硬件界面进行系统优化。</p>
+<p>2.软硬件协同设计可以通过协同作用来实现系统级目标</p>
+<p>3.软硬件协同设计提供分析方法和综合方法提高嵌入式系统设计的可预测性，在告诉设计者性能是否满足的同时，让设计者评估潜在的设计方法。</p>
+<p>4.已成为主流技术。</p>
+<h3 id="软硬件划分（影响软硬件折衷方案——双重性、速度、灵活性、开销，双重性为前提）">软硬件划分（影响软硬件折衷方案——双重性、速度、灵活性、开销，双重性为前提）</h3>
+<p>1.设计中必须决定什么功能由硬件实现，什么功能由软件实现。</p>
+<p>2.硬件和软件具有双重性，是划分决策的前提。</p>
+<p>3.软硬件变动对系统的决策造成影响。</p>
+<p>通常由<mark>软件</mark>实现的部分：操作系统功能（任务调度、资源管理、设备驱动）；协议栈（TCP/IP）；应用软件框架。</p>
+<p>通常由<mark>硬件</mark>实现的部分：基本系统，物理接口，基本逻辑电路。</p>
+<p>双重部分：算法（加密解密、编码解码、压缩解压）；数学运算（浮点运算、FFT）。</p>
+<p>软硬件技术对系统结构的影响：硬软件的设计呈现融合渗透的趋势；系统设计更加趋于协同设计，在增加灵活性的同时增加了风险。</p>
+<h2 id="lecture-3-嵌⼊式微处理器">lecture 3 - 嵌⼊式微处理器</h2>
+<p>硬件平台包含CPU，总线bus，存储器memory，I/O设备等</p>
+<p>流行的微处理器：ARM，MIPS，X86</p>
+<h3 id="冯诺依曼结构">冯诺依曼结构</h3>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>将程序指令存储器和数据存储器和并在一起的存储器结构</p>
+</li>
+<li class="lvl-2">
+<p>程序指令存储地址和数据存储地址指向同一个存储器的不同物理位置，因此程序指令和数据的宽度相同</p>
+</li>
+<li class="lvl-2">
+<p>CPU寄存器: 程序计数器(PC)，指令寄存器(IR)，通用寄存器等</p>
+</li>
+</ul>
+<h3 id="哈佛结构">哈佛结构</h3>
+<p><mark>特点</mark>：</p>
+<ol>
+<li class="lvl-3">
+<p>使用两个独立的存储器模块，分别存储指令和数据，每个存储模块都不允许指令和数据并存；</p>
+</li>
+<li class="lvl-3">
+<p>使用独立的两条总线，分别作为CPU与每个存储器之间的专用通信路径，而这两条总线之间毫无关联</p>
+</li>
+</ol>
+<p><mark>应用</mark>：</p>
+<p>大多数DSP使用哈佛架构来处理流数据</p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>更大的内存带宽</p>
+</li>
+<li class="lvl-2">
+<p>更可预测的带宽</p>
+</li>
+</ul>
+<p>改进的哈佛结构：</p>
+<ol>
+<li class="lvl-3">
+<p>使用两个独立的存储器模块，分别存储指令和数据，每个存储模块都不允许指令和数据并存；</p>
+</li>
+<li class="lvl-3">
+<p>具有一条独立的地址总线和一条独立的数据总线，利用公用地址总线访问两个存储模块（程序存储模块和数据存储模块），公用数据总线则被用来完成程序存储模块或数据存储模块与CPU之间的数据传输；</p>
+</li>
+<li class="lvl-3">
+<p>两条总线由程序存储器和数据存储器分时共用。</p>
+</li>
+</ol>
+<h3 id="RISC-VS-CISC">RISC VS CISC</h3>
+<p>RISC：精简指令集计算机</p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>load/store</p>
+</li>
+<li class="lvl-2">
+<p>流水线指令</p>
+</li>
+</ul>
+<p>CISC：复杂指令计算机</p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>多种寻址模式</p>
+</li>
+</ul>
+<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/posts/612fa1e/3.png" class="">
+<h4 id="RISC-V">RISC-V</h4>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>简单，完全开源且免费</p>
+</li>
+<li class="lvl-2">
+<p>将基准指令和扩展指令分开，可以通过扩展指令做定制化的模块和扩展（基准指令确定后将不会再有变化，这是RISC-V稳定性的重要保障）</p>
+</li>
+<li class="lvl-2">
+<p>32，64，128位指令集</p>
+</li>
+</ul>
+<h3 id="嵌入式微处理器的分类">嵌入式微处理器的分类</h3>
+<ol>
+<li class="lvl-3">
+<p>位数</p>
+<ul class="lvl-2">
+<li class="lvl-5">4，8，26，32，64位</li>
+</ul>
+</li>
+<li class="lvl-3">
+<p>功能</p>
+<ul class="lvl-2">
+<li class="lvl-5">嵌入式微处理单元（MPU）
+<ul class="lvl-4">
+<li class="lvl-7">嵌入式微处理器就是和通用计算机的处理器对应的CPU
+<ul class="lvl-6">
+<li class="lvl-9">功能和微处理器基本一样,是具有32位以上的处理器,具有较高的性能</li>
+<li class="lvl-9">具有体积小,功耗少,成本低,可靠性高的特点.</li>
+<li class="lvl-9">有的可提供工业级应用</li>
+</ul>
+</li>
+<li class="lvl-7">流行的嵌入式微处理器：ARM，MIPS</li>
+</ul>
+</li>
+<li class="lvl-5">嵌入式微控制器（MCU）
+<ul class="lvl-4">
+<li class="lvl-7">嵌入式微控制器就是将整个计算机系统的主要硬件集成到一块芯片中,芯片内部集成ROM/EPROM, RAM, 总线, 总线逻辑, 定时/计数器, Watchdog, I/O, 串行口等各种必要功能和外设.</li>
+<li class="lvl-7">特点
+<ul class="lvl-6">
+<li class="lvl-9">一个系列的微控制器具有多种衍生产品</li>
+<li class="lvl-9"><mark>单片化,体积大大减小,功耗和成本降低,可靠性提高</mark>;</li>
+<li class="lvl-9">是目前<mark>嵌入式工业的主流</mark>,约占嵌入式系统50%的份额;</li>
+<li class="lvl-9">多是8位和16位处理器</li>
+</ul>
+</li>
+<li class="lvl-7">流行的MCU：通用系列（8051，MC683xx，Cortex-M0/3/4/7），本通用系列（I2C，CAN BUS等）</li>
+</ul>
+</li>
+<li class="lvl-5">嵌入式DSP处理器
+<ul class="lvl-4">
+<li class="lvl-7">嵌入式DSP是专门用于信号处理方面的处理器，其在系统结构和指令算法方面进行了特殊设计，具有很高的编译效率和指令执行速度。</li>
+<li class="lvl-7">应用：数字滤波，频谱分析，FFT</li>
+<li class="lvl-7">流行的DSP：德州仪器（T1），模拟器件公司（ADI），摩托罗拉公司</li>
+</ul>
+</li>
+<li class="lvl-5">嵌入式SoC
+<ul class="lvl-4">
+<li class="lvl-7">嵌入式SoC是追求产品系统最大包容的集成器件。绝大多数系统构件都在一个系统芯片内部</li>
+<li class="lvl-7">SoC芯片可以有效地降低电子/信息系统产品的开发成本，缩短开发周期，提高产品的竞争力</li>
+<li class="lvl-7">特点：
+<ul class="lvl-6">
+<li class="lvl-9">结构简洁</li>
+<li class="lvl-9">体积小、功耗小</li>
+<li class="lvl-9">可靠性高</li>
+<li class="lvl-9">设计生产效率高</li>
+</ul>
+</li>
+<li class="lvl-7">流行的SoC：高通骁龙，海思</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<h3 id="FPGA">FPGA</h3>
+<p>FPGA 是一种以数字电路为主的集成芯片</p>
+<p>现场可编程门阵列，具有可编程特性的的集成电路</p>
+<h3 id="DSP与FPGA">DSP与FPGA</h3>
+-20231206205320924.(null))
+<h3 id="嵌入式微处理器的特点">嵌入式微处理器的特点</h3>
+<p><mark>基础</mark>：通用处理器</p>
+<p>与通用微处理器的<mark>区别</mark>：</p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>体积小、重量轻、可靠性高</p>
+</li>
+<li class="lvl-2">
+<p>功耗低</p>
+</li>
+<li class="lvl-2">
+<p>成本低：片上存储、引脚与封装、代码密度</p>
+</li>
+<li class="lvl-2">
+<p>工作温度、抗电磁干扰、可靠性等方面增强</p>
+</li>
+</ul>
+<h3 id="ARM架构">ARM架构</h3>
+<ol>
+<li class="lvl-3">
+<p>典型的RISC结构</p>
+<ul class="lvl-2">
+<li class="lvl-5">
+<p>丰富的寄存器</p>
+</li>
+<li class="lvl-5">
+<p>加载/存储体系结构</p>
+</li>
+<li class="lvl-5">
+<p>简单寻址模式</p>
+</li>
+<li class="lvl-5">
+<p>统一和固定长度的指令字段</p>
+</li>
+</ul>
+</li>
+<li class="lvl-3">
+<p>增强功能</p>
+<ul class="lvl-2">
+<li class="lvl-5">
+<p>每条指令控制ALU和移位器</p>
+</li>
+<li class="lvl-5">
+<p>自动递增和自动递减寻址模式</p>
+</li>
+<li class="lvl-5">
+<p>多个加载/存储</p>
+</li>
+<li class="lvl-5">
+<p>条件执行</p>
+</li>
+</ul>
+</li>
+<li class="lvl-3">
+<p>结果</p>
+<ul class="lvl-2">
+<li class="lvl-5">
+<p>高性能</p>
+</li>
+<li class="lvl-5">
+<p>低代码大小</p>
+</li>
+<li class="lvl-5">
+<p>低功耗</p>
+</li>
+<li class="lvl-5">
+<p>低硅面积</p>
+</li>
+</ul>
+</li>
+</ol>
+<h3 id="选择微处理器的原则">选择微处理器的原则</h3>
+<ol>
+<li class="lvl-3">
+<p>高效、经济地满足任务的计算需求</p>
+<ul class="lvl-2">
+<li class="lvl-5">速度，ROM和RAM的数量，I/O端口和定时器的数量，尺寸，封装，功耗</li>
+<li class="lvl-5">易于升级</li>
+<li class="lvl-5">单位成本</li>
+</ul>
+</li>
+<li class="lvl-3">
+<p>软件开发工具的可用性</p>
+<ul class="lvl-2">
+<li class="lvl-5">汇编器，调试器，C编译器，仿真器，模拟器，技术支持</li>
+</ul>
+</li>
+<li class="lvl-3">
+<p>广泛的可用性和可靠的微控制器来源</p>
+</li>
+</ol>
+<h3 id="选择微处理器的十个步骤">选择微处理器的十个步骤</h3>
+<p>列出硬件接口、检查软件架构、选择体系结构、确定内存需求、搜索微控制器、检查成本和功率约束、检查零件可用性、选择一个开发包、研究编译器和工具、开始实验</p>
+<h2 id="lecture-4-存储器架构">lecture 4 - 存储器架构</h2>
+<p>对许多应用来说，存储系统对整个系统性能的影响比对数据流水线的影响更大</p>
+<p><mark>复杂性</mark>：</p>
+<ol>
+<li class="lvl-3">
+<p>在同一个嵌入式系统中，通常需要组合各种存储技术</p>
+<ul class="lvl-2">
+<li class="lvl-5">至少需要一些非易失性存储和一些易失性存储</li>
+<li class="lvl-5">多种选择</li>
+</ul>
+</li>
+<li class="lvl-3">
+<p>层次结构往往是必须的</p>
+</li>
+<li class="lvl-3">
+<p>处理器架构的地址空间被分解成若干子空间来提供不同类型的存储器访问</p>
+</li>
+</ol>
+<h3 id="易失性存储器">易失性存储器</h3>
+<p><mark>断电时内容消失</mark>的存储器</p>
+<p>随机存储存储器（RAM）</p>
+<p>SRAM</p>
+<ol>
+<li class="lvl-3">
+<p>静态RAM，SRAM：速度快，面积大</p>
+</li>
+<li class="lvl-3">
+<p>动态RAM，DRAM：保持数据的时间很短，需要定期刷新，比SRAM更不稳定</p>
+</li>
+</ol>
+<h4 id="在嵌入式系统中的应用">在嵌入式系统中的应用</h4>
+<ol>
+<li class="lvl-3">
+<p>大多数嵌入式系统都包括一个SRAM，许多ES也会包括DRAM</p>
+<ul class="lvl-2">
+<li class="lvl-5">因为只利用SRAM不能提供足够大的存储容量</li>
+</ul>
+</li>
+<li class="lvl-3">
+<p>影响程序执行时间</p>
+<ul class="lvl-2">
+<li class="lvl-5">被访问的存储器地址是映射到SRAM还是DRAM</li>
+<li class="lvl-5">DRAM可能在忙于刷新时被请求访问，因此DRAM刷新周期会引起访问时间的变化</li>
+<li class="lvl-5">访问历史也可以影响存取时间</li>
+</ul>
+</li>
+</ol>
+<h3 id="非易失性存储器">非易失性存储器</h3>
+<p>不需要持续供电来保留存储在计算设备中的数据或程序代码</p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>只读存储器（ROM），或掩模ROM（Mask ROM）：内容在芯片工厂就已经固定</p>
+</li>
+<li class="lvl-2">
+<p>电可擦除可编程ROM（EEPROM）</p>
+</li>
+<li class="lvl-2">
+<p>快闪存储器（Flash）</p>
+<ul class="lvl-2">
+<li class="lvl-4">有比较快的读取时间，但比SRAM和DRAM慢
+<ul class="lvl-4">
+<li class="lvl-6">频繁访问的数据在程序使用之前从flash转移到RAM中</li>
+</ul>
+</li>
+<li class="lvl-4">写入时间大大超过读取时间，而且写入的次数是有限的
+<ul class="lvl-4">
+<li class="lvl-6">SLC：速度快寿命长，存储密度低稳定性好，成本高，约10万次擦写寿命，多数应用高端企业级产品</li>
+<li class="lvl-6">MLC：速度一般寿命一般，成本一般，约3000—10000次擦写寿命，应用民用中高端SSD上</li>
+<li class="lvl-6">TLC，速度慢，成本最低，使用寿命也最短，约1000次擦写寿命</li>
+</ul>
+</li>
+<li class="lvl-4">类型
+<ul class="lvl-4">
+<li class="lvl-6">NOR：按块擦除，擦除和写入时间较长，但能够像RAM那样访问</li>
+<li class="lvl-6">NAND：以块为单位，一个数据块是数百或数千比特，擦除和写入速度比较快，按页读取(512-4K字节)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="lvl-2">
+<p>磁盘存储器</p>
+</li>
+</ul>
+)
+<h4 id="固件">固件</h4>
+<p>固件（firmware）一般存储于设备中的电可擦除只读存储器或FLASH芯片中，一般可由用户通过特定的刷新程序进行升级的程序</p>
+<p>可固化（ROMable）：可被编程到ROM芯片中的机器语言。作为“只读”芯片不能更新，可固化程序必须使用RAM或磁盘来保存变化的数据。</p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>代码将从ROM正确执行，不需要复制到RAM，但是RAM可能更快</p>
+</li>
+<li class="lvl-2">
+<p>代码和数据不能混用，除了常量数据</p>
+</li>
+</ul>
+<h3 id="存储器层次结构">存储器层次结构</h3>
+<p>精确的分层机构取决于技术参数，也取决于应用领域</p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>处理器寄存器</p>
+</li>
+<li class="lvl-2">
+<p>缓冲存储器：高速缓存、地址转换高速缓存（TLB，也称快表）以及暂存存储器（SPM）。</p>
+</li>
+<li class="lvl-2">
+<p>工作存储器（或主存储器、主存）：实现了处理器存储地址所涵盖的存储器。通常，其容量在几MB到几GB之间，并且是易失的</p>
+</li>
+<li class="lvl-2">
+<p>flash、磁盘等非易失性存储，也可基于互联网的存储器解决方案（如云）</p>
+</li>
+</ul>
+<h3 id="cache">cache</h3>
+<p><mark>高速缓存的架构对应用程序的执行时间具有很大影响</mark></p>
+<p>高速缓存潜在地提高了存储系统的能效</p>
+<p>在设计时预测缓存是否命中是很困难的，并且这对实时性能的精确预测而言也是一个负担</p>
+<h4 id="多级cache">多级cache</h4>
+-20231206205902368.(null))
+<h3 id="暂存存储器">暂存存储器</h3>
+<p>SPM，也叫紧耦合内存TCM</p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>SPM和主存统一编址，每当某个简单的地址解码器给出一个SPM地址范围内的地址时，SPM就被访问</p>
+</li>
+<li class="lvl-2">
+<p>SPM通常和处理器集成在一个芯片上</p>
+</li>
+<li class="lvl-2">
+<p>功耗低、速度快</p>
+</li>
+</ul>
+<h3 id="存储器访问时间难以预测">存储器访问时间难以预测</h3>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p><mark>虚拟存储器</mark>（Virtual Memory）：使各种存储技术看起来是一个连续的地址空间</p>
+</li>
+<li class="lvl-2">
+<p><mark>地址转换</mark>：把地址空间的逻辑地址转换成一种存储技术上的物理地址，转换通常是由一个专门硬件协助完成，称为转换后备缓冲器（Translation Lookaside Buffer，TLB），加速地址转换</p>
+</li>
+</ul>
+<p>因此，很难预测或理解访问存储器的时间需要多久，因而嵌入式系统设计人员通常比一般程序员需要更深入地理解存储器系统</p>
+<!--更新于2023·12·6，完成lecture1-4整理-->
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="http://sebugmaker.github.io">Rain Sun</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://sebugmaker.github.io/posts/612fa1e.html">http://sebugmaker.github.io/posts/612fa1e.html</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://sebugmaker.github.io" target="_blank">Rain's Blog</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E5%B5%8C%E5%85%A5%E5%BC%8F/">嵌入式</a></div><div class="post_share"><div class="social-share" data-image="https://box.nju.edu.cn/f/23f2833d55ac43308a73/?dl=1" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/posts/dc53850b.html" title="MISE_hw4_体系结构作业"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://box.nju.edu.cn/f/3fdd71e61b504e9bb79d/?dl=1" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">MISE_hw4_体系结构作业</div></div></a></div></nav><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="gitalk-container"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://box.nju.edu.cn/f/8618b667f75848d78fe7/?dl=1" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Rain Sun</div><div class="author-info__description">Mia San Mia</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">23</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">11</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">7</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/SEBugMaker"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/SEBugMaker" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:sunbugmaker@gmail.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">嵌入式系统概论复习</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#lecture-1-%E5%B5%8C%E5%85%A5%E5%BC%8F%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%BF%B0"><span class="toc-number">1.1.</span> <span class="toc-text">lecture 1 - 嵌入式系统概述</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B5%8C%E5%85%A5%E5%BC%8F%E7%B3%BB%E7%BB%9F%E7%9A%84%E5%AE%9A%E4%B9%89"><span class="toc-number">1.1.1.</span> <span class="toc-text">嵌入式系统的定义</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B5%8C%E5%85%A5%E5%BC%8F%E7%B3%BB%E7%BB%9F%E4%B8%89%E8%A6%81%E7%B4%A0"><span class="toc-number">1.1.2.</span> <span class="toc-text">嵌入式系统三要素</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%97%A0%E5%A4%84%E4%B8%8D%E5%9C%A8%E7%9A%84%E5%B5%8C%E5%85%A5%E5%BC%8F"><span class="toc-number">1.1.3.</span> <span class="toc-text">无处不在的嵌入式</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#CPS"><span class="toc-number">1.1.3.1.</span> <span class="toc-text">CPS</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#WSN"><span class="toc-number">1.1.3.2.</span> <span class="toc-text">WSN</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#IOT"><span class="toc-number">1.1.3.3.</span> <span class="toc-text">IOT</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B5%8C%E5%85%A5%E5%BC%8F%E7%B3%BB%E7%BB%9F%E7%BB%84%E6%88%90"><span class="toc-number">1.1.4.</span> <span class="toc-text">嵌入式系统组成</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%8E%E9%80%9A%E7%94%A8%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="toc-number">1.1.5.</span> <span class="toc-text">与通用计算机的区别</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B5%8C%E5%85%A5%E5%BC%8F%E7%B3%BB%E7%BB%9F%E7%9A%84%E7%89%B9%E7%82%B9"><span class="toc-number">1.1.6.</span> <span class="toc-text">嵌入式系统的特点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B5%8C%E5%85%A5%E5%BC%8F%E7%B3%BB%E7%BB%9F%E5%88%86%E7%B1%BB"><span class="toc-number">1.1.7.</span> <span class="toc-text">嵌入式系统分类</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#lecture-2-%E5%B5%8C%E2%BC%8A%E5%BC%8F%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1%E2%BD%85%E6%B3%95"><span class="toc-number">1.2.</span> <span class="toc-text">lecture 2 - 嵌⼊式系统设计⽅法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B5%8C%E5%85%A5%E5%BC%8F%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1%E6%89%80%E9%9D%A2%E4%B8%B4%E7%9A%84%E6%8C%91%E6%88%98"><span class="toc-number">1.2.1.</span> <span class="toc-text">嵌入式系统设计所面临的挑战</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BC%A0%E7%BB%9F%E7%9A%84%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%BC%80%E5%8F%91%E8%BF%87%E7%A8%8B"><span class="toc-number">1.2.2.</span> <span class="toc-text">传统的嵌入式开发过程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BD%AF%E7%A1%AC%E4%BB%B6%E5%8D%8F%E5%90%8C%E8%AE%BE%E8%AE%A1-HW-SW-Co-design"><span class="toc-number">1.2.3.</span> <span class="toc-text">软硬件协同设计 HW&#x2F;SW Co-design</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BD%AF%E7%A1%AC%E4%BB%B6%E5%88%92%E5%88%86%EF%BC%88%E5%BD%B1%E5%93%8D%E8%BD%AF%E7%A1%AC%E4%BB%B6%E6%8A%98%E8%A1%B7%E6%96%B9%E6%A1%88%E2%80%94%E2%80%94%E5%8F%8C%E9%87%8D%E6%80%A7%E3%80%81%E9%80%9F%E5%BA%A6%E3%80%81%E7%81%B5%E6%B4%BB%E6%80%A7%E3%80%81%E5%BC%80%E9%94%80%EF%BC%8C%E5%8F%8C%E9%87%8D%E6%80%A7%E4%B8%BA%E5%89%8D%E6%8F%90%EF%BC%89"><span class="toc-number">1.2.4.</span> <span class="toc-text">软硬件划分（影响软硬件折衷方案——双重性、速度、灵活性、开销，双重性为前提）</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#lecture-3-%E5%B5%8C%E2%BC%8A%E5%BC%8F%E5%BE%AE%E5%A4%84%E7%90%86%E5%99%A8"><span class="toc-number">1.3.</span> <span class="toc-text">lecture 3 - 嵌⼊式微处理器</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%86%AF%E8%AF%BA%E4%BE%9D%E6%9B%BC%E7%BB%93%E6%9E%84"><span class="toc-number">1.3.1.</span> <span class="toc-text">冯诺依曼结构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%93%88%E4%BD%9B%E7%BB%93%E6%9E%84"><span class="toc-number">1.3.2.</span> <span class="toc-text">哈佛结构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#RISC-VS-CISC"><span class="toc-number">1.3.3.</span> <span class="toc-text">RISC VS CISC</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#RISC-V"><span class="toc-number">1.3.3.1.</span> <span class="toc-text">RISC-V</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%BE%AE%E5%A4%84%E7%90%86%E5%99%A8%E7%9A%84%E5%88%86%E7%B1%BB"><span class="toc-number">1.3.4.</span> <span class="toc-text">嵌入式微处理器的分类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#FPGA"><span class="toc-number">1.3.5.</span> <span class="toc-text">FPGA</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#DSP%E4%B8%8EFPGA"><span class="toc-number">1.3.6.</span> <span class="toc-text">DSP与FPGA</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%BE%AE%E5%A4%84%E7%90%86%E5%99%A8%E7%9A%84%E7%89%B9%E7%82%B9"><span class="toc-number">1.3.7.</span> <span class="toc-text">嵌入式微处理器的特点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ARM%E6%9E%B6%E6%9E%84"><span class="toc-number">1.3.8.</span> <span class="toc-text">ARM架构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%80%89%E6%8B%A9%E5%BE%AE%E5%A4%84%E7%90%86%E5%99%A8%E7%9A%84%E5%8E%9F%E5%88%99"><span class="toc-number">1.3.9.</span> <span class="toc-text">选择微处理器的原则</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%80%89%E6%8B%A9%E5%BE%AE%E5%A4%84%E7%90%86%E5%99%A8%E7%9A%84%E5%8D%81%E4%B8%AA%E6%AD%A5%E9%AA%A4"><span class="toc-number">1.3.10.</span> <span class="toc-text">选择微处理器的十个步骤</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#lecture-4-%E5%AD%98%E5%82%A8%E5%99%A8%E6%9E%B6%E6%9E%84"><span class="toc-number">1.4.</span> <span class="toc-text">lecture 4 - 存储器架构</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%98%93%E5%A4%B1%E6%80%A7%E5%AD%98%E5%82%A8%E5%99%A8"><span class="toc-number">1.4.1.</span> <span class="toc-text">易失性存储器</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9C%A8%E5%B5%8C%E5%85%A5%E5%BC%8F%E7%B3%BB%E7%BB%9F%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8"><span class="toc-number">1.4.1.1.</span> <span class="toc-text">在嵌入式系统中的应用</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%9D%9E%E6%98%93%E5%A4%B1%E6%80%A7%E5%AD%98%E5%82%A8%E5%99%A8"><span class="toc-number">1.4.2.</span> <span class="toc-text">非易失性存储器</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9B%BA%E4%BB%B6"><span class="toc-number">1.4.2.1.</span> <span class="toc-text">固件</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AD%98%E5%82%A8%E5%99%A8%E5%B1%82%E6%AC%A1%E7%BB%93%E6%9E%84"><span class="toc-number">1.4.3.</span> <span class="toc-text">存储器层次结构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#cache"><span class="toc-number">1.4.4.</span> <span class="toc-text">cache</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%A4%9A%E7%BA%A7cache"><span class="toc-number">1.4.4.1.</span> <span class="toc-text">多级cache</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9A%82%E5%AD%98%E5%AD%98%E5%82%A8%E5%99%A8"><span class="toc-number">1.4.5.</span> <span class="toc-text">暂存存储器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AD%98%E5%82%A8%E5%99%A8%E8%AE%BF%E9%97%AE%E6%97%B6%E9%97%B4%E9%9A%BE%E4%BB%A5%E9%A2%84%E6%B5%8B"><span class="toc-number">1.4.6.</span> <span class="toc-text">存储器访问时间难以预测</span></a></li></ol></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/posts/612fa1e.html" title="嵌入式系统概论期末复习"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://box.nju.edu.cn/f/23f2833d55ac43308a73/?dl=1" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="嵌入式系统概论期末复习"/></a><div class="content"><a class="title" href="/posts/612fa1e.html" title="嵌入式系统概论期末复习">嵌入式系统概论期末复习</a><time datetime="2023-12-06T12:48:13.000Z" title="发表于 2023-12-06 20:48:13">2023-12-06</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/dc53850b.html" title="MISE_hw4_体系结构作业"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://box.nju.edu.cn/f/3fdd71e61b504e9bb79d/?dl=1" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="MISE_hw4_体系结构作业"/></a><div class="content"><a class="title" href="/posts/dc53850b.html" title="MISE_hw4_体系结构作业">MISE_hw4_体系结构作业</a><time datetime="2023-10-24T11:41:10.000Z" title="发表于 2023-10-24 19:41:10">2023-10-24</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/c39bb1b9.html" title="GO学习第二章"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://box.nju.edu.cn/f/ddb1bd2caae242f9a7a3/?dl=1" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="GO学习第二章"/></a><div class="content"><a class="title" href="/posts/c39bb1b9.html" title="GO学习第二章">GO学习第二章</a><time datetime="2023-08-18T00:09:01.000Z" title="发表于 2023-08-18 08:09:01">2023-08-18</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/f38d5d61.html" title="GO学习第一章"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://box.nju.edu.cn/f/ddb1bd2caae242f9a7a3/?dl=1" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="GO学习第一章"/></a><div class="content"><a class="title" href="/posts/f38d5d61.html" title="GO学习第一章">GO学习第一章</a><time datetime="2023-08-17T12:40:11.000Z" title="发表于 2023-08-17 20:40:11">2023-08-17</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/35078.html" title="OS-homework02"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://box.nju.edu.cn/f/1f4bfc971b134fe1b81c/?dl=1" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="OS-homework02"/></a><div class="content"><a class="title" href="/posts/35078.html" title="OS-homework02">OS-homework02</a><time datetime="2023-05-23T07:26:41.000Z" title="发表于 2023-05-23 15:26:41">2023-05-23</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2023 By Rain Sun</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js"></script><div class="js-pjax"><script>if (!window.MathJax) {
+  window.MathJax = {
+    tex: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"]],
+      tags: 'ams'
+    },
+    chtml: {
+      scale: 1.1
+    },
+    options: {
+      renderActions: {
+        findScript: [10, doc => {
+          for (const node of document.querySelectorAll('script[type^="math/tex"]')) {
+            const display = !!node.type.match(/; *mode=display/)
+            const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display)
+            const text = document.createTextNode('')
+            node.parentNode.replaceChild(text, node)
+            math.start = {node: text, delim: '', n: 0}
+            math.end = {node: text, delim: '', n: 0}
+            doc.math.push(math)
+          }
+        }, ''],
+        insertScript: [200, () => {
+          document.querySelectorAll('mjx-container').forEach(node => {
+            if (node.hasAttribute('display')) {
+              btf.wrap(node, 'div', { class: 'mathjax-overflow' })
+            } else {
+              btf.wrap(node, 'span', { class: 'mathjax-overflow' })
+            }
+          });
+        }, '', false]
+      }
+    }
+  }
+  
+  const script = document.createElement('script')
+  script.src = 'https://cdn.jsdelivr.net/npm/mathjax/es5/tex-mml-chtml.min.js'
+  script.id = 'MathJax-script'
+  script.async = true
+  document.head.appendChild(script)
+} else {
+  MathJax.startup.document.state(0)
+  MathJax.texReset()
+  MathJax.typesetPromise()
+}</script><script>function loadGitalk () {
+  function initGitalk () {
+    var gitalk = new Gitalk(Object.assign({
+      clientID: '20a429832da2e6e476d2',
+      clientSecret: '1e0566074172e8fdbba6822aac63387246007855',
+      repo: 'SEBugMaker',
+      owner: 'SEBugMaker',
+      admin: ['SEBugMaker'],
+      id: '5162249ee6940840b94843b4e9ecde01',
+      updateCountCallback: commentCount
+    },null))
+
+    gitalk.render('gitalk-container')
+  }
+
+  if (typeof Gitalk === 'function') initGitalk()
+  else {
+    getCSS('https://cdn.jsdelivr.net/npm/gitalk/dist/gitalk.min.css')
+    getScript('https://cdn.jsdelivr.net/npm/gitalk/dist/gitalk.min.js').then(initGitalk)
+  }
+}
+
+function commentCount(n){
+  let isCommentCount = document.querySelector('#post-meta .gitalk-comment-count')
+  if (isCommentCount) {
+    isCommentCount.innerHTML= n
+  }
+}
+
+if ('Gitalk' === 'Gitalk' || !false) {
+  if (false) btf.loadComment(document.getElementById('gitalk-container'), loadGitalk)
+  else loadGitalk()
+} else {
+  function loadOtherComment () {
+    loadGitalk()
+  }
+}</script></div><div class="aplayer no-destroy" data-id="8251277445" data-server="netease" data-type="playlist" data-fixed="true" data-autoplay="false" data-lrcType="-1"> </div><canvas class="fireworks" mobile="false"></canvas><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/fireworks.min.js"></script><script defer="defer" id="fluttering_ribbon" mobile="true" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/canvas-fluttering-ribbon.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = true;
+POWERMODE.mobile = false;
+document.body.addEventListener('input', POWERMODE);
+</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/metingjs/dist/Meting.min.js"></script><script src="https://cdn.jsdelivr.net/npm/pjax/pjax.min.js"></script><script>let pjaxSelectors = ["head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: false,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:send', function () {
+
+  // removeEventListener scroll 
+  window.tocScrollFn && window.removeEventListener('scroll', window.tocScrollFn)
+  window.scrollCollect && window.removeEventListener('scroll', scrollCollect)
+
+  document.getElementById('rightside').style.cssText = "opacity: ''; transform: ''"
+  
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
+
+  typeof typed === 'object' && typed.destroy()
+
+  //reset readmode
+  const $bodyClassList = document.body.classList
+  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
+
+  typeof disqusjs === 'object' && disqusjs.destroy()
+})
+
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
+
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+  })
+
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof chatBtnFn === 'function' && chatBtnFn()
+  typeof panguInit === 'function' && panguInit()
+
+  // google analytics
+  typeof gtag === 'function' && gtag('config', '', {'page_path': window.location.pathname});
+
+  // baidu analytics
+  typeof _hmt === 'object' && _hmt.push(['_trackPageview',window.location.pathname]);
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+})
+
+document.addEventListener('pjax:error', (e) => {
+  if (e.request.status === 404) {
+    pjax.loadUrl('/404.html')
+  }
+})</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html><div id="sakana-widget" style="position:fixed;bottom:0px;right:0px;"></div><script>function initSakanaWidget() {
+  new SakanaWidget().mount('#sakana-widget');
+}</script><script async="" onload="initSakanaWidget()" src="https://cdn.jsdelivr.net/npm/sakana-widget@2.2.1/lib/sakana.min.js"></script>
